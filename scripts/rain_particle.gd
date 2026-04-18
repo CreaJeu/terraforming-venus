@@ -15,4 +15,3 @@ func _process(delta: float) -> void:
 	position.x += 2
 	if position.y > get_viewport().get_visible_rect().size.y - 10:
 		self.queue_free()
-		#? self.free()
