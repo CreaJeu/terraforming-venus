@@ -1,4 +1,3 @@
-class_name MoreWindmills
 extends Node2D
 
 @export var additional_energy: int = 10
@@ -12,8 +11,16 @@ func _ready() -> void:
 	else:
 		deselect()
 
-func apply() -> void:
+func apply() -> bool:
+	if gamestate.energy < price:
+		gamestate.display_message("Not enough energy: " + str(price) + " is needed for this upgrade")
+		return false
+		
+	gamestate.add_to_energy_storage(-price)
 	gamestate.set_energy_income(gamestate.energy_income + additional_energy)
+	gamestate.display_message("More windmills = More energy. Luckily there is no lack of wind on Venus.")
+
+	return true
 
 func select() -> void:
 	selected = true

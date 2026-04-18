@@ -36,7 +36,7 @@ offset_left = 7.0
 offset_top = 6.0
 offset_right = 21.0
 offset_bottom = 7.0
-text = "Buy [E]: ??? W"
+text = "Buy [E]"
 label_settings = ExtResource("2_ihlaf")
 
 [node name="pointer_Label" type="Label" parent="." unique_id=215427329]
