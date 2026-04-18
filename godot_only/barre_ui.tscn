@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://hodjx1ojhhcg"]
+
+[ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="1_hvqp1"]
+[ext_resource type="Script" uid="uid://b5lbm2ffhx4yb" path="res://scripts/barre_ui.gd" id="1_xto7w"]
+
+[node name="ui_bar" type="Node2D" unique_id=1323076745]
+script = ExtResource("1_xto7w")
+
+[node name="Ground" type="Label" parent="." unique_id=119061862]
+offset_right = 200.0
+offset_bottom = 1.0
+text = "########################################################################################################################################################################################################"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="UpperBorder" type="Label" parent="." unique_id=1970750338]
+offset_top = 1.0
+offset_right = 200.0
+offset_bottom = 2.0
+text = "*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="EmptyLine1" type="Label" parent="." unique_id=1011936329]
+offset_top = 2.0
+offset_right = 200.0
+offset_bottom = 3.0
+text = "|                                                                                                                                                                                                      |"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="TextLine1" type="Node2D" parent="." unique_id=610163043]
+position = Vector2(0, 3)
+
+[node name="LeftBorder" type="Label" parent="TextLine1" unique_id=1166437128]
+offset_right = 1.0
+offset_bottom = 1.0
+text = "|"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="BuildingSelect" type="Label" parent="TextLine1" unique_id=2084668417]
+offset_left = 2.0
+offset_right = 26.0
+offset_bottom = 1.0
+text = "[<-] WINDMILL FIELD [->]"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="EnergyStored_Label" type="Label" parent="TextLine1" unique_id=1815108020]
+offset_left = 41.0
+offset_right = 61.0
+offset_bottom = 1.0
+text = "Energy stored: 400 W"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="EnergyIncome_Label" type="Label" parent="TextLine1" unique_id=724381613]
+offset_left = 62.0
+offset_right = 73.0
+offset_bottom = 1.0
+text = "(+20 W/Day)"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="AcidityLevel_Label" type="Label" parent="TextLine1" unique_id=2009039764]
+offset_left = 88.0
+offset_right = 106.0
+offset_bottom = 1.0
+text = "Rain acidity: 99 %"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="AcidityChange_Label" type="Label" parent="TextLine1" unique_id=324438541]
+offset_left = 107.0
+offset_right = 119.0
+offset_bottom = 1.0
+text = "(-0.1 %/Day)"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="Date_Label" type="Label" parent="TextLine1" unique_id=1713223635]
+offset_left = 183.0
+offset_right = 198.0
+offset_bottom = 1.0
+text = "Year 12 Day 269"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="RightBorder" type="Label" parent="TextLine1" unique_id=970192026]
+offset_left = 199.0
+offset_right = 200.0
+offset_bottom = 1.0
+text = "|"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="EmptyLine2" type="Label" parent="." unique_id=1103819237]
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 5.0
+text = "|                                                                                                                                                                                                      |"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="TextLine2" type="Node2D" parent="." unique_id=1789827638]
+position = Vector2(0, 5)
+
+[node name="LeftBorder" type="Label" parent="TextLine2" unique_id=348725604]
+offset_right = 1.0
+offset_bottom = 1.0
+text = "|"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="Label1" type="Label" parent="TextLine2" unique_id=1423743622]
+offset_left = 2.0
+offset_right = 26.0
+offset_bottom = 1.0
+text = "Wow label"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="Label2" type="Label" parent="TextLine2" unique_id=1552973505]
+offset_left = 41.0
+offset_right = 73.0
+offset_bottom = 1.0
+text = "Yeah label"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="Label3" type="Label" parent="TextLine2" unique_id=1528487]
+offset_left = 88.0
+offset_right = 119.0
+offset_bottom = 1.0
+text = "Long long label"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="Label4" type="Label" parent="TextLine2" unique_id=199470501]
+offset_left = 183.0
+offset_right = 198.0
+offset_bottom = 1.0
+text = "Label"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="RightBorder" type="Label" parent="TextLine2" unique_id=823452430]
+offset_left = 199.0
+offset_right = 200.0
+offset_bottom = 1.0
+text = "|"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="EmptyLine3" type="Label" parent="." unique_id=1181921305]
+offset_top = 6.0
+offset_right = 200.0
+offset_bottom = 7.0
+text = "|                                                                                                                                                                                                      |"
+label_settings = ExtResource("1_hvqp1")
+
+[node name="LowerBorder" type="Label" parent="." unique_id=1114292436]
+offset_top = 7.0
+offset_right = 200.0
+offset_bottom = 8.0
+text = "*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*"
+label_settings = ExtResource("1_hvqp1")
