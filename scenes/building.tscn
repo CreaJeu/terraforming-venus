@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://c7nqptnp4kcpr" path="res://scripts/building.gd" id="1_ejq8p"]
 [ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="1_n8bkc"]
-[ext_resource type="PackedScene" uid="uid://cwxythcsu30vk" path="res://scenes/upgrade.tscn" id="2_uvy8r"]
 
 [node name="building_Node2D" type="Node2D" unique_id=909114598]
 script = ExtResource("1_ejq8p")
@@ -77,41 +76,13 @@ text = "*------------------------------------------------------*
 label_settings = ExtResource("1_n8bkc")
 
 [node name="title_Label" type="Label" parent="." unique_id=1957932454]
-offset_left = 147.0
+offset_left = 151.0
 offset_top = 2.0
-offset_right = 183.0
-offset_bottom = 4.0
-text = "~  Placeholder Building cool  ~"
+offset_right = 182.0
+offset_bottom = 7.0
+text = "###############################
+#                             #
+#  Placeholder Building cool  #
+#                             #
+###############################"
 label_settings = ExtResource("1_n8bkc")
-
-[node name="cursor_Label" type="Label" parent="." unique_id=1409063599]
-offset_left = 142.0
-offset_top = 8.0
-offset_right = 144.0
-offset_bottom = 9.0
-text = "=>"
-label_settings = ExtResource("1_n8bkc")
-
-[node name="buyUI_Label" type="Label" parent="." unique_id=1599377047]
-offset_left = 165.0
-offset_top = 10.0
-offset_right = 178.0
-offset_bottom = 11.0
-text = " -> buy : [E]"
-label_settings = ExtResource("1_n8bkc")
-
-[node name="upgradeList_Node2D" type="Node2D" parent="." unique_id=1695816068]
-position = Vector2(145, 5)
-
-[node name="bidon_upgrade_Node2D" parent="upgradeList_Node2D" unique_id=2074544727 instance=ExtResource("2_uvy8r")]
-position = Vector2(0, 1)
-effect_energy = 0
-
-[node name="bidon2_upgrade_Node2D" parent="upgradeList_Node2D" unique_id=1157117742 instance=ExtResource("2_uvy8r")]
-position = Vector2(0, 9)
-
-[node name="hiddenUpgrades_Node2D" type="Node2D" parent="." unique_id=1418546382]
-visible = false
-
-[node name="bidon3_upgrade_Node2D" parent="hiddenUpgrades_Node2D" unique_id=509165874 instance=ExtResource("2_uvy8r")]
-position = Vector2(145, 14)

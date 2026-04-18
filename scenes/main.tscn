@@ -1,19 +1,81 @@
 [gd_scene format=3 uid="uid://cegowu5wm8rcl"]
 
-[ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://bnigiwvjx0pm4" path="res://scenes/rain.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://b6thy2gm65e1f" path="res://scripts/game_state.gd" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://dry6i63t1elkt" path="res://assets/eolienne.svg" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://hodjx1ojhhcg" path="res://scenes/barre_ui.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cwxythcsu30vk" path="res://scenes/upgrades/upgrade_more_windmills.tscn" id="3_tefeu"]
+[ext_resource type="PackedScene" uid="uid://uuimb4h1kpls" path="res://scenes/building.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dceryyv6hwq4t" path="res://scenes/upgrades/upgrade_better_windmills.tscn" id="4_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://bt4l0txw36iug" path="res://assets/usine.svg" id="4_tbgi4"]
+[ext_resource type="Script" path="res://scripts/OurCamera.gd" id="5_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://7ma0qjwnwmwr" path="res://assets/transformateur.svg" id="8_85g3d"]
+[ext_resource type="Texture2D" uid="uid://6mvb7vrvg6og" path="res://assets/bac_bacteries.svg" id="11_ya4ey"]
 
 [node name="main_Node" type="Node" unique_id=767560022]
 
-[node name="bidon_Label" type="Label" parent="." unique_id=1517191274]
-offset_left = 60.0
-offset_top = 20.0
-offset_right = 80.0
-offset_bottom = 24.0
-text = "BIDON à SUPPRIMER"
-label_settings = ExtResource("1_o5qli")
+[node name="Windmills" parent="." unique_id=909114598 node_paths=PackedStringArray("upgrades") instance=ExtResource("4_jyhfs")]
+title = "Windmill Fields"
+upgrades = [NodePath("more_windmills_upgrade"), NodePath("better_windmills_upgrade")]
 
-[node name="gameState_Node" type="Node" parent="." unique_id=2142190266]
+[node name="more_windmills_upgrade" parent="Windmills" unique_id=2074544727 node_paths=PackedStringArray("gamestate") instance=ExtResource("3_tefeu")]
+position = Vector2(143, 12)
+gamestate = NodePath("../../gameState_Node")
+
+[node name="better_windmills_upgrade" parent="Windmills" unique_id=1010106578 node_paths=PackedStringArray("gamestate") instance=ExtResource("4_o6xl0")]
+position = Vector2(143, 26)
+gamestate = NodePath("../../gameState_Node")
+
+[node name="Transformateur" type="Sprite2D" parent="Windmills" unique_id=240555462]
+position = Vector2(114, 54)
+texture = ExtResource("8_85g3d")
+
+[node name="Eolienne" type="Sprite2D" parent="Windmills" unique_id=1359826047]
+position = Vector2(73, 40)
+texture = ExtResource("3_jyhfs")
+
+[node name="Eolienne2" type="Sprite2D" parent="Windmills" unique_id=814259118]
+position = Vector2(46.000004, 43)
+scale = Vector2(0.7352941, 0.8230769)
+texture = ExtResource("3_jyhfs")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1012836297]
+anchor_mode = 0
+script = ExtResource("5_o6xl0")
+
+[node name="Rain" parent="Camera2D" unique_id=869737895 instance=ExtResource("2_0wfyh")]
+z_index = -1
+
+[node name="ui_bar" parent="Camera2D" unique_id=1323076745 instance=ExtResource("3_tbgi4")]
+position = Vector2(0, 72)
+
+[node name="bacteria_factory" parent="." unique_id=1136961121 node_paths=PackedStringArray("upgrades") instance=ExtResource("4_jyhfs")]
+position = Vector2(318, 1)
+title = "Bacteria Factory"
+upgrades = [NodePath("better_windmills_upgrade"), NodePath("more_windmills_upgrade")]
+
+[node name="better_windmills_upgrade" parent="bacteria_factory" unique_id=1939666450 node_paths=PackedStringArray("gamestate") instance=ExtResource("4_o6xl0")]
+position = Vector2(145, 12)
+gamestate = NodePath("../../gameState_Node")
+
+[node name="more_windmills_upgrade" parent="bacteria_factory" unique_id=2082773088 node_paths=PackedStringArray("gamestate") instance=ExtResource("3_tefeu")]
+position = Vector2(146, 28)
+gamestate = NodePath("../../gameState_Node")
+
+[node name="Usine" type="Sprite2D" parent="bacteria_factory" unique_id=55223594]
+position = Vector2(104, 49)
+texture = ExtResource("4_tbgi4")
+
+[node name="BacBacteries" type="Sprite2D" parent="bacteria_factory" unique_id=479081016]
+position = Vector2(53, 45)
+texture = ExtResource("11_ya4ey")
+
+[node name="BacBacteries2" type="Sprite2D" parent="bacteria_factory" unique_id=1134593758]
+position = Vector2(28, 60)
+texture = ExtResource("11_ya4ey")
+
+[node name="gameState_Node" type="Node" parent="." unique_id=2142190266 node_paths=PackedStringArray("all_buildings", "camera", "ui_bar")]
 script = ExtResource("2_sugp2")
-
-[node name="blbl_Camera2D" type="Camera2D" parent="." unique_id=1012836297]
+all_buildings = [NodePath("../Windmills"), NodePath("../bacteria_factory")]
+camera = NodePath("../Camera2D")
+ui_bar = NodePath("../Camera2D/ui_bar")
