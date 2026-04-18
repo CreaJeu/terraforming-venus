@@ -7,11 +7,24 @@ extends Node
 @export var selected_building: int = 0
 @export var all_buildings: Array[Building]
 @export var camera: OurCamera
+@export var ui_bar: UIBar
 
 var current_day: float
 
 #func _ready() -> void:
 	#pass # Replace with function body.
+
+func set_energy_income(new_income: int):
+	energy_income = new_income
+	ui_bar.update_energy_income_label(new_income)
+
+func add_to_energy_storage(added_energy: int):
+	energy += added_energy
+	ui_bar.update_energy_stored_label(energy)
+
+func take_to_energy_storage(taken_energy: int):
+	energy -= taken_energy
+	ui_bar.update_energy_stored_label(energy)
 
 
 func _process(delta: float) -> void:

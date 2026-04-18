@@ -1,3 +1,4 @@
+class_name UIBar
 extends Node2D
 
 @onready var BuildingSelect: Label = $TextLine1/BuildingSelect

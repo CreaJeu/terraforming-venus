@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cwxythcsu30vk"]
+
+[ext_resource type="Script" uid="uid://dpgyt6sjh0ln1" path="res://scripts/upgrades/more_windmills.gd" id="1_dvb5a"]
+[ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="2_ihlaf"]
+[ext_resource type="PackedScene" uid="uid://cd2tvgt7xf8h3" path="res://scenes/blink_label.tscn" id="3_q17hp"]
+
+[node name="more_windmills_upgrade" type="Node2D" unique_id=2074544727]
+script = ExtResource("1_dvb5a")
+
+[node name="name_Label" type="Label" parent="." unique_id=808119497]
+offset_left = 4.0
+offset_right = 34.0
+offset_bottom = 1.0
+text = "& Construct additional windmills &"
+label_settings = ExtResource("2_ihlaf")
+
+[node name="effect_Label" type="Label" parent="." unique_id=1767086654]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 3.0
+text = "   Effect : + 10 W/Day"
+label_settings = ExtResource("2_ihlaf")
+
+[node name="price_Label" type="Label" parent="." unique_id=547317410]
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 22.0
+offset_bottom = 4.0
+text = "   Price : 100 W"
+label_settings = ExtResource("2_ihlaf")
+
+[node name="buy_Label" type="Label" parent="." unique_id=859475095]
+visible = false
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 21.0
+offset_bottom = 7.0
+text = "Buy [E]: ??? W"
+label_settings = ExtResource("2_ihlaf")
+
+[node name="pointer_Label" type="Label" parent="." unique_id=215427329]
+visible = false
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 5.0
+offset_bottom = 7.0
+text = "=>"
+label_settings = ExtResource("2_ihlaf")
+
+[node name="BlinkLabel" parent="pointer_Label" unique_id=1665782607 instance=ExtResource("3_q17hp")]
+
+[node name="Separator" type="Label" parent="." unique_id=2018465745]
+offset_top = 9.0
+offset_right = 47.0
+offset_bottom = 10.0
+text = "-----------------------------------------------"
+label_settings = ExtResource("2_ihlaf")
