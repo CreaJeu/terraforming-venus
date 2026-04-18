@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dx2eag1egw7cb"]
+
+[ext_resource type="Script" uid="uid://d0ubqa1i8joow" path="res://scripts/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://cd2tvgt7xf8h3" path="res://scenes/blink_label.tscn" id="2_ekxnf"]
+
+[node name="MainMenu" type="Node2D" unique_id=1562402571]
+script = ExtResource("1_bqqt6")
+
+[node name="GameName_Label" type="Label" parent="." unique_id=1828243913]
+offset_left = 6.0
+offset_top = 12.0
+offset_right = 195.0
+offset_bottom = 35.0
+text = ".___________. _______ .______      .______          ___       _______   ______   .______      .___  ___.  __  .__   __.   _______    ____    ____  _______ .__   __.  __    __       _______.
+|           ||   ____||   _  \\     |   _  \\        /   \\     |   ____| /  __  \\  |   _  \\     |   \\/   | |  | |  \\ |  |  /  _____|   \\   \\  /   / |   ____||  \\ |  | |  |  |  |     /       |
+`---|  |----`|  |__   |  |_)  |    |  |_)  |      /  ^  \\    |  |__   |  |  |  | |  |_)  |    |  \\  /  | |  | |   \\|  | |  |  __      \\   \\/   /  |  |__   |   \\|  | |  |  |  |    |   (----`
+    |  |     |   __|  |      /     |      /      /  /_\\  \\   |   __|  |  |  |  | |      /     |  |\\/|  | |  | |  . `  | |  | |_ |      \\      /   |   __|  |  . `  | |  |  |  |     \\   \\    
+    |  |     |  |____ |  |\\  \\----.|  |\\  \\----./  _____  \\  |  |     |  `--'  | |  |\\  \\----.|  |  |  | |  | |  |\\   | |  |__| |       \\    /    |  |____ |  |\\   | |  `--'  | .----)   |   
+    |__|     |_______|| _| `._____|| _| `._____/__/     \\__\\ |__|      \\______/  | _| `._____||__|  |__| |__| |__| \\__|  \\______|        \\__/     |_______||__| \\__|  \\______/  |_______/    
+                                                                                                                                                                                             "
+label_settings = ExtResource("1_l6cm7")
+
+[node name="StartGame_Label" type="Label" parent="." unique_id=1046647306]
+offset_left = 24.0
+offset_top = 30.0
+offset_right = 184.0
+offset_bottom = 53.0
+text = "TTTTTTT  OOOOO      SSSSS  TTTTTTT   AAA   RRRRRR  TTTTTTT    PPPPPP  RRRRRR  EEEEEEE  SSSSS   SSSSS     [[[[  SSSSS  PPPPPP    AAA    CCCCC  EEEEEEE ]]]] 
+  TTT   OO   OO    SS        TTT    AAAAA  RR   RR   TTT      PP   PP RR   RR EE      SS      SS         [[   SS      PP   PP  AAAAA  CC    C EE        ]] 
+  TTT   OO   OO     SSSSS    TTT   AA   AA RRRRRR    TTT      PPPPPP  RRRRRR  EEEEE    SSSSS   SSSSS     [[    SSSSS  PPPPPP  AA   AA CC      EEEEE     ]] 
+  TTT   OO   OO         SS   TTT   AAAAAAA RR  RR    TTT      PP      RR  RR  EE           SS      SS    [[        SS PP      AAAAAAA CC    C EE        ]] 
+  TTT    OOOO0      SSSSS    TTT   AA   AA RR   RR   TTT      PP      RR   RR EEEEEEE  SSSSS   SSSSS     [[[[  SSSSS  PP      AA   AA  CCCCC  EEEEEEE ]]]] 
+                                                                                                                                                           "
+label_settings = ExtResource("1_l6cm7")
+
+[node name="BlinkLabel" parent="StartGame_Label" unique_id=39142206 instance=ExtResource("2_ekxnf")]
+
+[node name="Quit_Label" type="Label" parent="." unique_id=1418080008]
+offset_left = 70.0
+offset_top = 69.0
+offset_right = 133.0
+offset_bottom = 92.0
+text = "  _____ ___     ___  _   _ ___ _____   __ _____ ____   ____ __ 
+ |_   _/ _ \\   / _ \\| | | |_ _|_   _| | _| ____/ ___| / ___|_ |
+   | || | | | | | | | | | || |  | |   | ||  _| \\___ \\| |    | |
+   | || |_| | | |_| | |_| || |  | |   | || |___ ___) | |___ | |
+   |_| \\___/   \\__\\_\\\\___/|___| |_|   | ||_____|____/ \\____|| |
+                                      |__|                 |__|"
+label_settings = ExtResource("1_l6cm7")
