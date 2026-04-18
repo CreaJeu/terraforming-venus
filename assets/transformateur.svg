@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="25.912718"
+   height="34.594021"
+   viewBox="0 0 25.912718 34.594021"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="transformateur.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#822960"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="false"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="4.0885417"
+     inkscape:cx="-6.9707006"
+     inkscape:cy="31.673885"
+     inkscape:window-width="1235"
+     inkscape:window-height="1011"
+     inkscape:window-x="26"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="151.08153"
+       y="8.2585983"
+       width="38.537579"
+       height="13.467516"
+       id="rect3466" />
+    <linearGradient
+       id="linearGradient1056"
+       inkscape:swatch="gradient">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1052" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop1054" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-83.656684,-39.163304)">
+    <text
+       xml:space="preserve"
+       id="text3464"
+       style="white-space:pre;shape-inside:url(#rect3466);fill:none;stroke:#ffffff;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="151.08203"
+         y="32.645065"
+         id="tspan3907"><tspan
+           dx="0 4.9560013 4.1279984"
+           id="tspan3905">rfe</tspan></tspan></text>
+    <path
+       id="rect3863"
+       style="fill:none;stroke:#ffffff;stroke-width:0.858545"
+       d="m 84.244973,68.45267 h 24.732337 v 4.875383 H 84.244973 Z" />
+    <path
+       id="rect3865"
+       style="fill:none;stroke:#ffffff;stroke-width:0.858545"
+       d="M 87.165801,46.596132 H 106.51526 V 68.448249 H 87.165801 Z" />
+    <path
+       id="rect3867"
+       style="fill:none;stroke:#ffffff;stroke-width:0.858545"
+       d="m 84.085957,39.592577 h 25.054173 v 6.777605 H 84.085957 Z" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:0.858545"
+       d="m 88.950713,66.079092 15.827947,0.05792 -7.550103,-17.198261 z"
+       id="path3869" />
+  </g>
+</svg>

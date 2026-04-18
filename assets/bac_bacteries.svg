@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="28.384043"
+   height="27.046799"
+   viewBox="0 0 28.384043 27.046799"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="bac_bacteries.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#822960"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="false"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="4.0885417"
+     inkscape:cx="55.276433"
+     inkscape:cy="9.9057324"
+     inkscape:window-width="1236"
+     inkscape:window-height="1011"
+     inkscape:window-x="26"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="151.08153"
+       y="8.2585983"
+       width="38.537579"
+       height="13.467516"
+       id="rect3466" />
+    <linearGradient
+       id="linearGradient1056"
+       inkscape:swatch="gradient">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1052" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop1054" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-36.814569,-43.075001)">
+    <text
+       xml:space="preserve"
+       id="text3464"
+       style="white-space:pre;shape-inside:url(#rect3466);display:inline;fill:none;stroke:#ffffff;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="151.08203"
+         y="32.645065"
+         id="tspan4388"><tspan
+           dx="0 4.9560013 4.1279984"
+           id="tspan4386">rfe</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:1.12457"
+       d="m 37.381698,68.290909 c 8.875208,1.37027 18.07728,2.030985 26.858038,-0.123078 l 0.380789,-20.419243 c -9.349566,3.802725 -18.156861,2.390176 -27.029784,-0.354587 z"
+       id="path4093"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="path4180"
+       style="fill:none;stroke:#ffffff;stroke-width:1.14092"
+       d="M 64.577148,46.97723 A 13.483044,3.3317695 0 0 1 51.094105,50.309 13.483044,3.3317695 0 0 1 37.611061,46.97723 13.483044,3.3317695 0 0 1 51.094105,43.645461 13.483044,3.3317695 0 0 1 64.577148,46.97723 Z" />
+  </g>
+</svg>
