@@ -26,7 +26,8 @@ func applySelectedUpgrade():
 	# Get selected upgrade and apply it
 	var upgrade = upgrades[selected_upgrade_index]
 	# TODO: return if not enough money
-	upgrade.apply()
+	if !upgrade.apply():
+		return
 	
 	upgrades.remove_at(selected_upgrade_index)
 	if upgrades.size() > 0:

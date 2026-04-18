@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var energy_multiplier: float = 2.0
-@export var price: int = 400
+@export var bacteria_reduction_improvement: float = 0.1
+@export var price: int = 150
 @export var selected: bool = false
 @export var gamestate: GameState
 
@@ -15,9 +15,10 @@ func apply() -> bool:
 	if gamestate.energy < price:
 		gamestate.display_message("Not enough energy: " + str(price) + " is needed for this upgrade")
 		return false
+		
 	gamestate.add_to_energy_storage(-price)
-	gamestate.set_energy_income(gamestate.energy_income * 2)
-	gamestate.display_message("The windmills now have a motor making them spin extra fast to produce more energy")
+	gamestate.set_acidity_change(gamestate.toxicity_reduction + bacteria_reduction_improvement)
+	gamestate.display_message("Shoking bacteria with a lot of electricity surprisingly makes more of them. That was definetly why we tried that.")
 	return true
 
 func select() -> void:

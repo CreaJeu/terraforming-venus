@@ -1,34 +1,34 @@
-[gd_scene format=3 uid="uid://dceryyv6hwq4t"]
+[gd_scene format=3 uid="uid://cyjcgnixmq7si"]
 
-[ext_resource type="Script" uid="uid://cx8kx5u3w148m" path="res://scripts/upgrades/better_windmills.gd" id="1_wwll0"]
-[ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="2_5baib"]
-[ext_resource type="PackedScene" uid="uid://cd2tvgt7xf8h3" path="res://scenes/blink_label.tscn" id="3_syfrc"]
+[ext_resource type="Script" uid="uid://b4qsac17plpo6" path="res://scripts/upgrades/produce_more_bacteria.gd" id="1_2apw4"]
+[ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="2_g3dul"]
+[ext_resource type="PackedScene" uid="uid://cd2tvgt7xf8h3" path="res://scenes/blink_label.tscn" id="3_s4uq4"]
 
-[node name="better_windmills_upgrade" type="Node2D" unique_id=2074544727]
-script = ExtResource("1_wwll0")
+[node name="more_bacteria_upgrade" type="Node2D" unique_id=2074544727]
+script = ExtResource("1_2apw4")
 
 [node name="name_Label" type="Label" parent="." unique_id=808119497]
 offset_left = 4.0
 offset_right = 34.0
 offset_bottom = 1.0
-text = "& Improve windmills &"
-label_settings = ExtResource("2_5baib")
+text = "& Produce more anti-acid bacteria &"
+label_settings = ExtResource("2_g3dul")
 
 [node name="effect_Label" type="Label" parent="." unique_id=1767086654]
 offset_left = 4.0
 offset_top = 2.0
 offset_right = 42.0
 offset_bottom = 3.0
-text = "   Effect : +Energy production x2"
-label_settings = ExtResource("2_5baib")
+text = "   Effect : +0.1% acidity reduction"
+label_settings = ExtResource("2_g3dul")
 
 [node name="price_Label" type="Label" parent="." unique_id=547317410]
 offset_left = 4.0
 offset_top = 3.0
 offset_right = 22.0
 offset_bottom = 4.0
-text = "   Price : 400 W"
-label_settings = ExtResource("2_5baib")
+text = "   Price : 150 W"
+label_settings = ExtResource("2_g3dul")
 
 [node name="buy_Label" type="Label" parent="." unique_id=859475095]
 visible = false
@@ -37,7 +37,7 @@ offset_top = 6.0
 offset_right = 21.0
 offset_bottom = 7.0
 text = "Buy [E]"
-label_settings = ExtResource("2_5baib")
+label_settings = ExtResource("2_g3dul")
 
 [node name="pointer_Label" type="Label" parent="." unique_id=215427329]
 visible = false
@@ -46,13 +46,13 @@ offset_top = 6.0
 offset_right = 5.0
 offset_bottom = 7.0
 text = "=>"
-label_settings = ExtResource("2_5baib")
+label_settings = ExtResource("2_g3dul")
 
-[node name="BlinkLabel" parent="pointer_Label" unique_id=1665782607 instance=ExtResource("3_syfrc")]
+[node name="BlinkLabel" parent="pointer_Label" unique_id=1665782607 instance=ExtResource("3_s4uq4")]
 
 [node name="Separator" type="Label" parent="." unique_id=2018465745]
 offset_top = 9.0
 offset_right = 47.0
 offset_bottom = 10.0
 text = "-----------------------------------------------"
-label_settings = ExtResource("2_5baib")
+label_settings = ExtResource("2_g3dul")

@@ -8,22 +8,33 @@
 [ext_resource type="PackedScene" uid="uid://uuimb4h1kpls" path="res://scenes/building.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dceryyv6hwq4t" path="res://scenes/upgrades/upgrade_better_windmills.tscn" id="4_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bt4l0txw36iug" path="res://assets/usine.svg" id="4_tbgi4"]
-[ext_resource type="Script" path="res://scripts/OurCamera.gd" id="5_o6xl0"]
+[ext_resource type="Script" uid="uid://tt4imcuxn1kh" path="res://scripts/OurCamera.gd" id="5_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://7ma0qjwnwmwr" path="res://assets/transformateur.svg" id="8_85g3d"]
+[ext_resource type="PackedScene" uid="uid://cyjcgnixmq7si" path="res://scenes/upgrades/upgrade_more_bacteria.tscn" id="9_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://bt75dqc0het1a" path="res://scenes/upgrades/upgrade_better_bacteria.tscn" id="10_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://cagmf1j2ietoh" path="res://scenes/upgrades/upgrade_super_bacteria.tscn" id="11_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://6mvb7vrvg6og" path="res://assets/bac_bacteries.svg" id="11_ya4ey"]
 
 [node name="main_Node" type="Node" unique_id=767560022]
 
 [node name="Windmills" parent="." unique_id=909114598 node_paths=PackedStringArray("upgrades") instance=ExtResource("4_jyhfs")]
 title = "Windmill Fields"
-upgrades = [NodePath("more_windmills_upgrade"), NodePath("better_windmills_upgrade")]
+upgrades = [NodePath("more_windmills_upgrade"), NodePath("more_windmills_upgrade2"), NodePath("more_windmills_upgrade3"), NodePath("better_windmills_upgrade")]
 
 [node name="more_windmills_upgrade" parent="Windmills" unique_id=2074544727 node_paths=PackedStringArray("gamestate") instance=ExtResource("3_tefeu")]
 position = Vector2(143, 12)
 gamestate = NodePath("../../gameState_Node")
 
+[node name="more_windmills_upgrade2" parent="Windmills" unique_id=143629266 node_paths=PackedStringArray("gamestate") instance=ExtResource("3_tefeu")]
+position = Vector2(143, 24)
+gamestate = NodePath("../../gameState_Node")
+
+[node name="more_windmills_upgrade3" parent="Windmills" unique_id=1436794835 node_paths=PackedStringArray("gamestate") instance=ExtResource("3_tefeu")]
+position = Vector2(142, 37)
+gamestate = NodePath("../../gameState_Node")
+
 [node name="better_windmills_upgrade" parent="Windmills" unique_id=1010106578 node_paths=PackedStringArray("gamestate") instance=ExtResource("4_o6xl0")]
-position = Vector2(143, 26)
+position = Vector2(142, 50)
 gamestate = NodePath("../../gameState_Node")
 
 [node name="Transformateur" type="Sprite2D" parent="Windmills" unique_id=240555462]
@@ -52,14 +63,22 @@ position = Vector2(0, 72)
 [node name="bacteria_factory" parent="." unique_id=1136961121 node_paths=PackedStringArray("upgrades") instance=ExtResource("4_jyhfs")]
 position = Vector2(318, 1)
 title = "Bacteria Factory"
-upgrades = [NodePath("better_windmills_upgrade"), NodePath("more_windmills_upgrade")]
+upgrades = [NodePath("more_bacteria_upgrade"), NodePath("more_bacteria_upgrade2"), NodePath("better_bacteria_upgrade"), NodePath("super_bacteria_upgrade")]
 
-[node name="better_windmills_upgrade" parent="bacteria_factory" unique_id=1939666450 node_paths=PackedStringArray("gamestate") instance=ExtResource("4_o6xl0")]
-position = Vector2(145, 12)
+[node name="more_bacteria_upgrade" parent="bacteria_factory" unique_id=1167395263 node_paths=PackedStringArray("gamestate") instance=ExtResource("9_a8y0u")]
+position = Vector2(142, 11)
 gamestate = NodePath("../../gameState_Node")
 
-[node name="more_windmills_upgrade" parent="bacteria_factory" unique_id=2082773088 node_paths=PackedStringArray("gamestate") instance=ExtResource("3_tefeu")]
-position = Vector2(146, 28)
+[node name="more_bacteria_upgrade2" parent="bacteria_factory" unique_id=1326053446 node_paths=PackedStringArray("gamestate") instance=ExtResource("9_a8y0u")]
+position = Vector2(142, 24)
+gamestate = NodePath("../../gameState_Node")
+
+[node name="better_bacteria_upgrade" parent="bacteria_factory" unique_id=323965203 node_paths=PackedStringArray("gamestate") instance=ExtResource("10_jkv2x")]
+position = Vector2(142, 38)
+gamestate = NodePath("../../gameState_Node")
+
+[node name="super_bacteria_upgrade" parent="bacteria_factory" unique_id=1932132369 node_paths=PackedStringArray("gamestate") instance=ExtResource("11_jbj1t")]
+position = Vector2(142, 50)
 gamestate = NodePath("../../gameState_Node")
 
 [node name="Usine" type="Sprite2D" parent="bacteria_factory" unique_id=55223594]
