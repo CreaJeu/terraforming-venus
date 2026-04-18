@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="terraformv" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="DebugWindows">
+				<Option output="bin/Debug/terraformVenus" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-fPIC" />
+					<Add option="-O0" />
+					<Add option="-ggdb3" />
+					<Add option="-DCLUIGE_DEBUG" />
+					<Add option="-DPDC_DLL_BUILD" />
+				</Compiler>
+				<Linker>
+					<Add option="-static-libgcc" />
+					<Add library="../cluige/bin/Debug/libcluige.a" />
+				</Linker>
+				<ExtraCommands>
+					<Add after='cmd /C &quot;xcopy /V /Y /F /D ..\PDCurses\wincon\myDebug\pdcurses.dll  bin\Debug\&quot;' />
+					<Add after='cmd /C &quot;xcopy /V /Y /F /D ..\cluige\bin\Debug\cluige.dll  bin\Debug\&quot;' />
+				</ExtraCommands>
+			</Target>
+			<Target title="DebugLinux">
+				<Option output="bin/Debug/terraformVenus" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-fPIC" />
+					<Add option="-O0" />
+					<Add option="-ggdb3" />
+					<Add option="-DCLUIGE_DEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-static-libgcc" />
+					<Add option="-Wl,-rpath,&apos;\\$$$$ORIGIN&apos;" />
+					<Add library="XCurses" />
+					<Add library="cluige" />
+					<Add directory="../PDCurses/x11" />
+					<Add directory="../cluige/bin/Debug" />
+					<Add directory="." />
+				</Linker>
+			</Target>
+			<Target title="ReleaseWindows">
+				<Option output="bin/Release/terraformVenus" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-fPIC" />
+					<Add option="-DPDC_DLL_BUILD" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-static-libgcc" />
+					<Add library="../cluige/bin/Release/libcluige.a" />
+				</Linker>
+				<ExtraCommands>
+					<Add after='cmd /C &quot;xcopy /V /Y /F /D ..\PDCurses\wincon\myRelease\pdcurses.dll  bin\Release\&quot;' />
+					<Add after='cmd /C &quot;xcopy /V /Y /F /D ..\cluige\bin\Release\cluige.dll  bin\Release\&quot;' />
+				</ExtraCommands>
+			</Target>
+			<Target title="ReleaseLinux">
+				<Option output="bin/Release/terraformVenus" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-fPIC" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-static-libgcc" />
+					<Add option="-Wl,-rpath,&apos;\\$$$$ORIGIN&apos;" />
+					<Add library="XCurses" />
+					<Add library="cluige" />
+					<Add directory="../PDCurses/x11" />
+					<Add directory="../cluige/bin/Release" />
+					<Add directory="." />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c11" />
+			<Add directory="../cluige" />
+		</Compiler>
+		<Linker>
+			<Add option="-static-libgcc" />
+		</Linker>
+		<Unit filename="cluige_only/BarreUI.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/BarreUI.h" />
+		<Unit filename="cluige_only/BetterWindmills.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/BetterWindmills.h" />
+		<Unit filename="cluige_only/Building.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/Building.h" />
+		<Unit filename="cluige_only/GameState.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/GameState.h" />
+		<Unit filename="cluige_only/ImproveBacteria.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/ImproveBacteria.h" />
+		<Unit filename="cluige_only/MainMenu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/MainMenu.h" />
+		<Unit filename="cluige_only/MoreWindmills.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/MoreWindmills.h" />
+		<Unit filename="cluige_only/OurCamera.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/OurCamera.h" />
+		<Unit filename="cluige_only/ProduceMoreBacteria.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/ProduceMoreBacteria.h" />
+		<Unit filename="cluige_only/Rain.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/Rain.h" />
+		<Unit filename="cluige_only/RainParticle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/RainParticle.h" />
+		<Unit filename="cluige_only/SuperBacteria.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/SuperBacteria.h" />
+		<Unit filename="cluige_only/blink_label.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/blink_label.h" />
+		<Unit filename="cluige_only/main_terraform.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
