@@ -6,8 +6,7 @@ extends Node
 @export var energy_income: int = 10
 @export var selected_building: int = 0
 @export var all_buildings: Array[Building]
-#@export var camera: OurCamera
-
+@export var camera: OurCamera
 
 var current_day: float
 
@@ -21,13 +20,13 @@ func _process(delta: float) -> void:
 		selected_building -= 1
 		if(selected_building < 0):
 			selected_building = all_buildings.size() - 1
-		print("left")#OurCamera.start_moving()
+		camera.start_moving()
 	if(Input.is_action_just_pressed("right")):
-		#ddselected_building = (selected_building + 1) % all_buildings.size()
-		print("right")#OurCamera.start_moving()
-	#if(Input.is_action_just_pressed("up")):
-#z		all_buildings[selected_building].select_up()
-	#if(Input.is_action_just_pressed("down")):
-		#all_buildings[selected_building].select_down()
+		selected_building = (selected_building + 1) % all_buildings.size()
+		camera.start_moving()
+	if(Input.is_action_just_pressed("up")):
+		all_buildings[selected_building].select_up()
+	if(Input.is_action_just_pressed("down")):
+		all_buildings[selected_building].select_down()
 	if(Input.is_action_just_pressed("exit")):
 		get_tree().quit()
