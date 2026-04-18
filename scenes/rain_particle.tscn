@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bihpp0nlx2ua2"]
+
+[ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="1_tbh67"]
+[ext_resource type="Script" uid="uid://delwmmspegyfn" path="res://scripts/rain_particle.gd" id="2_iwqp2"]
+
+[node name="RainParticle" type="Label" unique_id=2053937538]
+offset_right = 1.0
+offset_bottom = 1.0
+text = "\\"
+label_settings = ExtResource("1_tbh67")
+script = ExtResource("2_iwqp2")
