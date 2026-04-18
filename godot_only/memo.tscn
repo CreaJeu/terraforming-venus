@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cnnugvadcjrla"]
+
+[ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://assets/essai_label_settings.tres" id="1_vo7e0"]
+
+[node name="memo_Node2D" type="Node2D" unique_id=387138261]
+
+[node name="memoProjectSettings_SpriteText" type="Label" parent="." unique_id=1389981925]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 104.0
+offset_bottom = 32.0
+text = "~ ~ Memo Project Settings ~ ~
+
+(the goal is that one 'unit' in godot = one character in cluige = same coordinates)
+
+Customize to your project :
+Application / Config / Name = \"your game title\"
+Application / Run / Max FPS = 15 wanted FPS in cluige and in godot
+Display / Window / Size / Viewport Width = 112 characters in cluige
+Display / Window / Size / Viewport Height = 60 characters in cluige
+Display / Window / Size / Viewport Width Override = 952 pixels in godot run (stretched)
+Display / Window / Size / Viewport Height Override = 510 pixels in godot run (stretched)
+Rendering / Environment / Defaults / Default Clear Color = what you prefer"
+label_settings = ExtResource("1_vo7e0")
+
+[node name="memoEditorSettings_SpriteText" type="Label" parent="." unique_id=1860913777]
+offset_left = 26.0
+offset_top = 28.0
+offset_right = 97.0
+offset_bottom = 38.0
+text = "~ ~ Memo Editor Settings ~ ~
+
+Text editor / Completion / Auto brace complete = what you prefer
+Editors / 2D / Viewport Border Color = the more opaque the more visible
+
+Project Manager / Default Renderer = 
+          gl_compatibility => the least destructive for the planet"
+label_settings = ExtResource("1_vo7e0")
+
+[node name="memoOtherSettings_SpriteText" type="Label" parent="." unique_id=1024385597]
+offset_left = 18.0
+offset_top = 38.0
+offset_right = 101.0
+offset_bottom = 48.0
+text = "~ ~ Memo other Settings ~ ~
+
+2D View / 'Snapping options' (top toolbar, 'three vertical dots' near the middle) /
+                            Configure snap / Grid step = 1px 1px
+                           (so one grid square = one character in cluige)
+
+2D View / 'View' (top toolbar, near the end) / Grid / Show = what you prefer
+
+Run game window / Embedding options (toolbar, at the end) / Keep Aspect Ratio"
+label_settings = ExtResource("1_vo7e0")
+
+[node name="memoLabelSVG_SpriteText" type="Label" parent="." unique_id=95271474]
+offset_left = 10.0
+offset_top = 51.0
+offset_right = 104.0
+offset_bottom = 61.0
+text = "+ Labels :
+   use cluige_template/label_settings.tres
+
++ SVG :
+   see cluige_template/memo_inkscape.svg
+   keep Project settings / Import Defaults (tab) / Importer Texture2D / Fix Alpha Border : off"
+label_settings = ExtResource("1_vo7e0")
+
+[node name="non-cluige_Node2D" type="Node2D" parent="." unique_id=2127274830]
+
+[node name="background_Polygon2D3" type="Polygon2D" parent="non-cluige_Node2D" unique_id=1840269826]
+position = Vector2(-5.21212, -7.5555553)
+scale = Vector2(0.121212125, 0.44444445)
+color = Color(0.8740287, 0.98276097, 0.43676862, 1)
+polygon = PackedVector2Array(43, 17, 76, 17, 76, 26, 43, 26)
+
+[node name="background_Polygon2D4" type="Polygon2D" parent="non-cluige_Node2D" unique_id=2078438747]
+position = Vector2(103, -7.0000005)
+scale = Vector2(0.121212125, 0.44444445)
+color = Color(0.8740287, 0.98276097, 0.43676862, 1)
+polygon = PackedVector2Array(43, 17, 76, 17, 76, 26, 43, 26)
+
+[node name="background_Polygon2D5" type="Polygon2D" parent="non-cluige_Node2D" unique_id=948786564]
+position = Vector2(103, 48)
+scale = Vector2(0.121212125, 0.44444445)
+color = Color(0.8740287, 0.98276097, 0.43676862, 1)
+polygon = PackedVector2Array(43, 17, 76, 17, 76, 26, 43, 26)
+
+[node name="background_Polygon2D6" type="Polygon2D" parent="non-cluige_Node2D" unique_id=804181239]
+position = Vector2(-5, 48)
+scale = Vector2(0.121212125, 0.44444445)
+color = Color(0.8740287, 0.98276097, 0.43676862, 1)
+polygon = PackedVector2Array(43, 17, 76, 17, 76, 26, 43, 26)

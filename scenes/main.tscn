@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cegowu5wm8rcl"]
+
+[ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="1_o5qli"]
+
+[node name="main_Node" type="Node" unique_id=767560022]
+
+[node name="bidon_Label" type="Label" parent="." unique_id=1517191274]
+offset_left = 60.0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 24.0
+text = "BIDON à SUPPRIMER"
+label_settings = ExtResource("1_o5qli")
