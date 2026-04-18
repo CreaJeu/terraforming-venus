@@ -109,7 +109,6 @@ effect_energy = 0
 
 [node name="bidon2_upgrade_Node2D" parent="upgradeList_Node2D" unique_id=1157117742 instance=ExtResource("2_uvy8r")]
 position = Vector2(0, 9)
-effect_rain = 0
 
 [node name="hiddenUpgrades_Node2D" type="Node2D" parent="." unique_id=1418546382]
 visible = false

@@ -1,7 +1,10 @@
+class_name Building
 extends Node2D
 
 @export
 var title: String = "~  Placeholder Building cool  ~"
+
+@export var selected_upgrade: Upgrade
 
 func _ready() -> void:
 	$title_Label.text = title

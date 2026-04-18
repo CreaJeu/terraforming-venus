@@ -1,3 +1,4 @@
+class_name Upgrade
 extends Node2D
 
 @export var name_str: String = ". Placeholder upgrade thing stuff ."
