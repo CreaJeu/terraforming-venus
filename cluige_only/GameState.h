@@ -1,6 +1,10 @@
 #ifndef GameState_H_INCLUDED
 #define GameState_H_INCLUDED
 
+//#include "OurCamera.h"
+//#include "BarreUI.h"
+typedef struct _OurCamera OurCamera;
+typedef struct _BarreUI BarreUI;
 //typedef Script;
 //typedef Node2D;
 
@@ -10,8 +14,18 @@ struct _GameState
 //	Script* _this_Script;
 //	Node2D* _this_Node2D;
 
-	//@export from .gd
-//	float speed;//cluige characters per second
+	float toxicity;
+	float toxicity_reduction;
+	int energy;
+	int energy_income;
+	int selected_building;
+	Deque all_buildings;
+	OurCamera* camera;
+	BarreUI* ui_bar;
+	float day_duration;
+
+	float time_passed;
+	int current_day;
 
 	//virtual methods - private copy of mother class pointers
 	void (*_delete_super)(Script*);
