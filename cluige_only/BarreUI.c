@@ -40,59 +40,72 @@ void ready_BarreUI(Script* this_Script)
 	BarreUI* this_BarreUI = (BarreUI*)(this_Script->_sub_class);
     Node* this_Node = (Node*)(this_Script->node);
 
-	Node* n = iCluige.iNode.get_node(this_Node, "./TextLine1/BuildingSelect");
-	this_BarreUI->BuildingSelect = (SpriteText*)n->script->_sub_class;
+	Node* n = iCluige.iNode.get_node(this_Node, "TextLine1/BuildingSelect");
+	Node2D* n2D = (Node2D*)n->_sub_class;
+	this_BarreUI->BuildingSelect = (SpriteText*)n2D->_sub_class;
 
-    n = iCluige.iNode.get_node(this_Node, "./TextLine1/EnergyStored_Label");
-	this_BarreUI->EnergyStored = (SpriteText*)n->script->_sub_class;
+    n = iCluige.iNode.get_node(this_Node, "TextLine1/EnergyStored_Label");
+    n2D = (Node2D*)n->_sub_class;
+	this_BarreUI->EnergyStored = (SpriteText*)n2D->_sub_class;
 
-    n = iCluige.iNode.get_node(this_Node, "./TextLine1/EnergyIncome_Label");
-	this_BarreUI->EnergyIncome = (SpriteText*)n->script->_sub_class;
+    n = iCluige.iNode.get_node(this_Node, "TextLine1/EnergyIncome_Label");
+    n2D = (Node2D*)n->_sub_class;
+	this_BarreUI->EnergyIncome = (SpriteText*)n2D->_sub_class;
 
-    n = iCluige.iNode.get_node(this_Node, "./TextLine1/AcidityLevel_Label");
-	this_BarreUI->AcidityLevel = (SpriteText*)n->script->_sub_class;
+    n = iCluige.iNode.get_node(this_Node, "TextLine1/AcidityLevel_Label");
+    n2D = (Node2D*)n->_sub_class;
+	this_BarreUI->AcidityLevel = (SpriteText*)n2D->_sub_class;
 
-    n = iCluige.iNode.get_node(this_Node, "./TextLine1/AcidityChange_Label");
-	this_BarreUI->AcidityChange = (SpriteText*)n->script->_sub_class;
+    n = iCluige.iNode.get_node(this_Node, "TextLine1/AcidityChange_Label");
+    n2D = (Node2D*)n->_sub_class;
+	this_BarreUI->AcidityChange = (SpriteText*)n2D->_sub_class;
 
-    n = iCluige.iNode.get_node(this_Node, "./TextLine1/Date_Label");
-	this_BarreUI->Date_Label = (SpriteText*)n->script->_sub_class;
+    n = iCluige.iNode.get_node(this_Node, "TextLine1/Date_Label");
+    n2D = (Node2D*)n->_sub_class;
+	this_BarreUI->Date_Label = (SpriteText*)n2D->_sub_class;
 
-    n = iCluige.iNode.get_node(this_Node, "./TextLine2/Text");
-	this_BarreUI->Message_Label = (SpriteText*)n->script->_sub_class;
+    n = iCluige.iNode.get_node(this_Node, "TextLine2/Text");
+    n2D = (Node2D*)n->_sub_class;
+	this_BarreUI->Message_Label = (SpriteText*)n2D->_sub_class;
 }
 
-void update_selected_building_label(BarreUI* barreUI, char* new_building){
+void update_selected_building_label(BarreUI* barreUI, char* new_building)
+{
     char str[50];
     sprintf(str, "[ <- ] %s [ -> ]", new_building);
     iCluige.iSpriteText.set_text(barreUI->BuildingSelect, str);
 }
 
-void update_energy_stored_label(BarreUI* barreUI, int new_energy){
+void update_energy_stored_label(BarreUI* barreUI, int new_energy)
+{
     char str[40];
     sprintf(str, "Energy stored: %d W", new_energy);
     iCluige.iSpriteText.set_text(barreUI->EnergyStored, str);
 }
 
-void update_energy_income_label(BarreUI* barreUI, int new_income){
+void update_energy_income_label(BarreUI* barreUI, int new_income)
+{
     char str[40];
     sprintf(str, "(+ %d W/Day)", new_income);
     iCluige.iSpriteText.set_text(barreUI->EnergyIncome, str);
 }
 
-void update_acidity_level_label(BarreUI* barreUI, float new_level){
+void update_acidity_level_label(BarreUI* barreUI, float new_level)
+{
     char str[50];
     sprintf(str, "Rain acidity %.2f %%", new_level);
     iCluige.iSpriteText.set_text(barreUI->AcidityLevel, str);
 }
 
-void update_acidity_change_label(BarreUI* barreUI, float new_change){
+void update_acidity_change_label(BarreUI* barreUI, float new_change)
+{
     char str[50];
     sprintf(str, "(-%.2f %%/Day)", new_change);
     iCluige.iSpriteText.set_text(barreUI->AcidityChange, str);
 }
 
-void update_displayed_date(BarreUI* barreUI, int current_day){
+void update_displayed_date(BarreUI* barreUI, int current_day)
+{
     int day = current_day%365;
     int year = (int) (current_day / 365);
     //Date_Label.text = "Year " + str(year) + " Day " + str(day)
@@ -101,6 +114,7 @@ void update_displayed_date(BarreUI* barreUI, int current_day){
     iCluige.iSpriteText.set_text(barreUI->Date_Label, str);
 }
 
-void set_message(BarreUI* barreUI, char* message){
+void set_message(BarreUI* barreUI, char* message)
+{
     iCluige.iSpriteText.set_text(barreUI->Message_Label, message);
 }
