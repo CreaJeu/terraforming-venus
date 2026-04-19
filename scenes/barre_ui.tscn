@@ -39,7 +39,7 @@ label_settings = ExtResource("1_hvqp1")
 offset_left = 2.0
 offset_right = 26.0
 offset_bottom = 1.0
-text = "[ ← ] WINDMILL FIELD [ → ]"
+text = "[ <- ] WINDMILL FIELD [ -> ]"
 label_settings = ExtResource("1_hvqp1")
 
 [node name="EnergyStored_Label" type="Label" parent="TextLine1" unique_id=1815108020]
