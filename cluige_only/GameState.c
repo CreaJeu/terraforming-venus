@@ -136,7 +136,7 @@ void set_ui(GameState* this_GameState){
 }
 
 void process_GameState(Script* this_Script, float delta)
-{//TODO
+{
     // Handling time passing
 	GameState* this_GameState = (GameState*)(this_Script->_sub_class);
 	this_GameState->time_passed+=delta;
@@ -144,11 +144,47 @@ void process_GameState(Script* this_Script, float delta)
         _on_day_timeout(this_GameState);
 	}
 
-//	if(iCluige.iInput.is_action_just_pressed(UP))
-//	{
-//		...
-//	}
-	Node2D* this_Node2D = (Node2D*)(this_Script->node->_sub_class);
+	int selec = this_GameState->selected_building;
+	Deque* bb = &(this_GameState->all_buildings);
+	Building* b = (Building*)iCluige.iDeque.at(bb, selec).ptr;
+	int nbb = iCluige.iDeque.size(bb);
+	int ok_action = iCluige.iInput.action_id_from_name("ok", true);
+	int left_action = iCluige.iInput.action_id_from_name("left", true);
+	int right_action = iCluige.iInput.action_id_from_name("right", true);
+	int up_action = iCluige.iInput.action_id_from_name("up", true);
+	int down_action = iCluige.iInput.action_id_from_name("down", true);
+	int exit_action = iCluige.iInput.action_id_from_name("exit", true);
+	if(iCluige.iInput.is_action_just_pressed(ok_action))
+	{
+		applySelectedUpgrade(b);
+	}
+	if(iCluige.iInput.is_action_just_pressed(left_action))
+	{
+		this_GameState->selected_building = (selec - 1) % nbb;
+		update_selected_building_label(
+			this_GameState->ui_bar, b->title);
+		start_moving(this_GameState->camera);
+	}
+	if(iCluige.iInput.is_action_just_pressed(right_action))
+	{
+		this_GameState->selected_building = (selec + 1) % nbb;
+		update_selected_building_label(
+			this_GameState->ui_bar, b->title);
+		start_moving(this_GameState->camera);
+	}
+	if(iCluige.iInput.is_action_just_pressed(up_action))
+	{
+		select_up(b);
+	}
+	if(iCluige.iInput.is_action_just_pressed(down_action))
+	{
+		select_down(b);
+	}
+	if(iCluige.iInput.is_action_just_pressed(exit_action))
+	{
+		iCluige.quit_asked = true;
+	}
+//	Node2D* this_Node2D = (Node2D*)(this_Script->node->_sub_class);
 }
 
 void ready_GameState(Script* this_Script)

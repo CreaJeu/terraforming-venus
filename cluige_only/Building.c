@@ -151,7 +151,7 @@ void select_up(Building* this_Building)
 	select_upgrade(this_Node,  selec);
 }
 
-void deselect_up(Building* this_Building)
+void select_down(Building* this_Building)
 {
 	Node* this_Node = this_Building->_this_Node2D->_this_Node;
 	int selec = this_Building->selected_upgrade_index;

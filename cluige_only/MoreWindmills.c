@@ -1,5 +1,6 @@
 #include <cluige.h>
 #include "MoreWindmills.h"
+#include "BarreUI.h"
 
 void ready_MoreWindmills(Script* this_Script);
 
@@ -73,7 +74,7 @@ bool apply_MoreWindmills(MoreWindmills* this_MoreWindmills, GameState* gamestate
     }
     take_from_energy_storage(gamestate, this_MoreWindmills->price);
     set_energy_income(gamestate, gamestate->energy_income+this_MoreWindmills->additional_energy);
-    set_message("More windmills = More energy. Luckily there is no lack of wind on Venus.");
+    set_message(gamestate->ui_bar, "More windmills = More energy. Luckily there is no lack of wind on Venus.");
 
     return true;
 }
