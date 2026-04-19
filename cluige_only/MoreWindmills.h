@@ -3,6 +3,7 @@
 
 //typedef Script;
 //typedef Node2D;
+#include "GameState.h"
 
 typedef struct _MoreWindmills MoreWindmills;
 struct _MoreWindmills
@@ -11,7 +12,10 @@ struct _MoreWindmills
 //	Node2D* _this_Node2D;
 
 	//@export from .gd
-//	float speed;//cluige characters per second
+	int additional_energy;
+	int price;
+	bool selected;
+	GameState* gamestate;
 
 	//virtual methods - private copy of mother class pointers
 	void (*_delete_super)(Script*);
@@ -24,5 +28,7 @@ struct _MoreWindmills
 void register_MoreWindmillsFactory();
 void delete_MoreWindmills(Script* this_Script);
 //void process_MoreWindmills(Script* this_Script, float delta);
+
+bool apply_MoreWindmills(MoreWindmills* this_MoreWindmills, GameState* gamestate);
 
 #endif // _H_INCLUDED

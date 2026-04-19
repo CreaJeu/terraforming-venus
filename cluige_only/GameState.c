@@ -79,6 +79,78 @@ void delete_GameState(Script* this_Script)
 	delete_super(this_Script);
 }
 
+void set_energy_income(GameState* this_GameState, int new_income)
+{
+    this_GameState->energy_income = new_income;
+    update_energy_income_label(this_GameState->ui_bar, new_income);
+}
+
+void add_to_energy_storage(GameState* this_GameState, int added_energy)
+{
+    this_GameState->energy += added_energy;
+    update_energy_stored_label(this_GameState->ui_bar, this_GameState->energy);
+}
+
+void take_from_energy_storage(GameState* this_GameState, int taken_energy)
+{
+    this_GameState->energy -= taken_energy;
+    update_energy_stored_label(this_GameState->ui_bar, this_GameState->energy);
+}
+
+void remove_acidity(GameState* this_GameState, float removed_acidity)
+{
+    this_GameState->toxicity -= removed_acidity;
+    update_acidity_level_label(this_GameState->ui_bar, this_GameState->toxicity);
+}
+
+void set_acidity_change(GameState* this_GameState, float new_acidity_change)
+{
+    this_GameState->toxicity_reduction = new_acidity_change;
+    update_acidity_change_label(this_GameState->ui_bar, new_acidity_change);
+}
+
+void _update_toxicity(GameState* this_GameState){
+    remove_acidity(this_GameState, this_GameState->toxicity_reduction);
+}
+
+void _update_energy(GameState* this_GameState){
+    add_to_energy_storage(this_GameState, this_GameState->energy_income);
+}
+
+void _on_day_timeout(GameState* this_GameState){
+    this_GameState->time_passed = 0;
+    this_GameState->current_day++;
+    update_displayed_date(this_GameState->ui_bar, this_GameState->current_day);
+
+    _update_toxicity(this_GameState);
+    _update_energy(this_GameState);
+}
+
+void set_ui(GameState* this_GameState){
+	update_acidity_level_label(this_GameState->ui_bar, this_GameState->toxicity);
+	update_acidity_change_label(this_GameState->ui_bar, this_GameState->toxicity_reduction);
+	update_energy_income_label(this_GameState->ui_bar, this_GameState->energy_income);
+	update_energy_stored_label(this_GameState->ui_bar, this_GameState->energy);
+	update_displayed_date(this_GameState->ui_bar, this_GameState->current_day);
+	set_message(this_GameState->ui_bar, "Welcome to Venus! Deadly rain of sulfuric acid was found to be bad for colonists health. Get rid of it! The acid of course, the rain can stay.");
+}
+
+void process_GameState(Script* this_Script, float delta)
+{//TODO
+    // Handling time passing
+	GameState* this_GameState = (GameState*)(this_Script->_sub_class);
+	this_GameState->time_passed+=delta;
+	if (this_GameState->time_passed > this_GameState->day_duration){
+        _on_day_timeout(this_GameState);
+	}
+
+//	if(iCluige.iInput.is_action_just_pressed(UP))
+//	{
+//		...
+//	}
+	Node2D* this_Node2D = (Node2D*)(this_Script->node->_sub_class);
+}
+
 void ready_GameState(Script* this_Script)
 {
 	GameState* this_GameState = (GameState*)(this_Script->_sub_class);
@@ -93,15 +165,7 @@ void ready_GameState(Script* this_Script)
 	this_GameState->camera = (OurCamera*)(n->script->_sub_class);
 	n = iCluige.iNode.get_node(this_Node, "../Camera2D/ui_bar");
 	this_GameState->ui_bar = (BarreUI*)(n->script->_sub_class);
+
+	set_ui(this_GameState);
 }
 
-void process_GameState(Script* this_Script, float delta)
-{//TODO
-//	GameState* this_GameState = (GameState*)(this_Script->_sub_class);
-//	if(iCluige.iInput.is_action_just_pressed(UP))
-//	{
-//		...
-//	}
-//	Node2D* this_Node2D = (Node2D*)(this_Script->node->_sub_class);
-//	iCluige.iNode2D.move_local(this_Node2D, (Vector2){dx * delta, dy * delta});
-}
