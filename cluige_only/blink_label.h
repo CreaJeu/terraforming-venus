@@ -27,4 +27,6 @@ void register_BlinkLabelFactory();
 void delete_BlinkLabel(Script* this_Script);
 //void process_BlinkLabel(Script* this_Script, float delta);
 
+void process_BlinkLabel(Script* this_Script, float delta);
+
 #endif // _H_INCLUDED
