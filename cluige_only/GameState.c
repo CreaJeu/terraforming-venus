@@ -79,27 +79,32 @@ void delete_GameState(Script* this_Script)
 	delete_super(this_Script);
 }
 
-void set_energy_income(GameState* this_GameState, int new_income){
+void set_energy_income(GameState* this_GameState, int new_income)
+{
     this_GameState->energy_income = new_income;
     update_energy_income_label(this_GameState->ui_bar, new_income);
 }
 
-void add_to_energy_storage(GameState* this_GameState, int added_energy){
+void add_to_energy_storage(GameState* this_GameState, int added_energy)
+{
     this_GameState->energy += added_energy;
     update_energy_stored_label(this_GameState->ui_bar, this_GameState->energy);
 }
 
-void take_from_energy_storage(GameState* this_GameState, int taken_energy){
+void take_from_energy_storage(GameState* this_GameState, int taken_energy)
+{
     this_GameState->energy -= taken_energy;
     update_energy_stored_label(this_GameState->ui_bar, this_GameState->energy);
 }
 
-void remove_acidity(GameState* this_GameState, float removed_acidity){
+void remove_acidity(GameState* this_GameState, float removed_acidity)
+{
     this_GameState->toxicity -= removed_acidity;
     update_acidity_level_label(this_GameState->ui_bar, this_GameState->toxicity);
 }
 
-void set_acidity_change(GameState* this_GameState, float new_acidity_change){
+void set_acidity_change(GameState* this_GameState, float new_acidity_change)
+{
     this_GameState->toxicity_reduction = new_acidity_change;
     update_acidity_change_label(this_GameState->ui_bar, new_acidity_change);
 }
@@ -127,7 +132,7 @@ void set_ui(GameState* this_GameState){
 	update_energy_income_label(this_GameState->ui_bar, this_GameState->energy_income);
 	update_energy_stored_label(this_GameState->ui_bar, this_GameState->energy);
 	update_displayed_date(this_GameState->ui_bar, this_GameState->current_day);
-	set_message(this_GameState->ui_bar, "Welcome to Venus! Deadly rain of sulfuric acid was found to be bad for colonists health. Get rid of it! The acid of course, rain can stay.");
+	set_message(this_GameState->ui_bar, "Welcome to Venus! Deadly rain of sulfuric acid was found to be bad for colonists health. Get rid of it! The acid of course, the rain can stay.");
 }
 
 void process_GameState(Script* this_Script, float delta)

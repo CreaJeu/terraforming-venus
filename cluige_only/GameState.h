@@ -39,5 +39,10 @@ void register_GameStateFactory();
 void delete_GameState(Script* this_Script);
 //void process_GameState(Script* this_Script, float delta);
 
+void set_energy_income(GameState* this_GameState, int new_income);
+void add_to_energy_storage(GameState* this_GameState, int added_energy);
+void take_from_energy_storage(GameState* this_GameState, int taken_energy);
+void remove_acidity(GameState* this_GameState, float removed_acidity);
+void set_acidity_change(GameState* this_GameState, float new_acidity_change);
 
 #endif // _H_INCLUDED
