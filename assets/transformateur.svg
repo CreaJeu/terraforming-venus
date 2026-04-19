@@ -24,14 +24,14 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="4.0885417"
-     inkscape:cx="-6.9707006"
-     inkscape:cy="31.673885"
-     inkscape:window-width="1235"
-     inkscape:window-height="1011"
-     inkscape:window-x="26"
-     inkscape:window-y="23"
-     inkscape:window-maximized="0"
+     inkscape:zoom="11.564142"
+     inkscape:cx="2.0753809"
+     inkscape:cy="21.229417"
+     inkscape:window-width="1887"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
      id="defs2">
@@ -57,32 +57,32 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-83.656684,-39.163304)">
+     id="layer1">
     <text
        xml:space="preserve"
        id="text3464"
-       style="white-space:pre;shape-inside:url(#rect3466);fill:none;stroke:#ffffff;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"><tspan
+       style="white-space:pre;shape-inside:url(#rect3466);display:inline;fill:none;stroke:#ffffff;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       transform="translate(-83.656684,-39.163305)"><tspan
          x="151.08203"
-         y="32.645065"
-         id="tspan3907"><tspan
-           dx="0 4.9560013 4.1279984"
-           id="tspan3905">rfe</tspan></tspan></text>
+         y="32.34375"
+         id="tspan1067"><tspan
+           dx="0 4.9335938 4.2246094"
+           id="tspan1065">rfe</tspan></tspan></text>
     <path
        id="rect3863"
        style="fill:none;stroke:#ffffff;stroke-width:0.858545"
-       d="m 84.244973,68.45267 h 24.732337 v 4.875383 H 84.244973 Z" />
+       d="M 0.5882884,29.289365 H 25.320625 v 4.875383 H 0.5882884 Z" />
     <path
        id="rect3865"
        style="fill:none;stroke:#ffffff;stroke-width:0.858545"
-       d="M 87.165801,46.596132 H 106.51526 V 68.448249 H 87.165801 Z" />
+       d="M 3.5091164,7.4328274 H 22.858575 V 29.284944 H 3.5091164 Z" />
     <path
        id="rect3867"
        style="fill:none;stroke:#ffffff;stroke-width:0.858545"
-       d="m 84.085957,39.592577 h 25.054173 v 6.777605 H 84.085957 Z" />
+       d="M 0.4292724,0.4292724 H 25.483445 v 6.777605 H 0.4292724 Z" />
     <path
        style="fill:none;stroke:#ffffff;stroke-width:0.858545"
-       d="m 88.950713,66.079092 15.827947,0.05792 -7.550103,-17.198261 z"
+       d="M 5.2940284,26.915787 21.121976,26.973707 13.571873,9.7754465 Z"
        id="path3869" />
   </g>
 </svg>

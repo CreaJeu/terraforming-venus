@@ -25,12 +25,12 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="4.0885417"
-     inkscape:cx="13.452229"
-     inkscape:cy="35.342675"
-     inkscape:window-width="1236"
-     inkscape:window-height="1011"
-     inkscape:window-x="26"
-     inkscape:window-y="23"
+     inkscape:cx="11.006369"
+     inkscape:cy="36.443312"
+     inkscape:window-width="1887"
+     inkscape:window-height="1023"
+     inkscape:window-x="0"
+     inkscape:window-y="33"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
@@ -57,32 +57,35 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-77.532354,-21.065512)">
-    <text
-       xml:space="preserve"
-       id="text3464"
-       style="white-space:pre;shape-inside:url(#rect3466);fill:none;stroke:#ffffff;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"><tspan
-         x="151.08203"
-         y="32.645065"
-         id="tspan4338"><tspan
-           dx="0 4.9560013 4.1279984"
-           id="tspan4336">rfe</tspan></tspan></text>
-    <path
-       id="rect3943"
-       style="fill:none;stroke:#ffffff"
-       d="m 78.076553,42.982259 h 46.729307 v 23.28344 H 78.076553 Z" />
-    <path
-       style="fill:none;stroke:#ffffff;stroke-width:0.842261"
-       d="M 78.127933,42.879847 77.966513,22.90831 89.231443,42.645464 Z"
-       id="path3945" />
-    <path
-       style="fill:none;stroke:#ffffff;stroke-width:0.842261"
-       d="M 89.528893,42.893809 89.367483,22.922272 100.63242,42.659426 Z"
-       id="path3945-7" />
-    <path
-       style="fill:none;stroke:#ffffff;stroke-width:0.842261"
-       d="m 101.12667,42.647312 -0.16141,-19.971537 11.26493,19.737154 z"
-       id="path3945-7-0" />
+     id="layer1">
+    <g
+       id="g848"
+       transform="translate(-77.532354,-21.065511)">
+      <text
+         xml:space="preserve"
+         id="text3464"
+         style="white-space:pre;shape-inside:url(#rect3466);fill:none;stroke:#ffffff;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"><tspan
+           x="151.08203"
+           y="32.34375"
+           id="tspan868"><tspan
+             dx="0 4.9335938 4.2246094"
+             id="tspan866">rfe</tspan></tspan></text>
+      <path
+         id="rect3943"
+         style="fill:none;stroke:#ffffff"
+         d="m 78.076553,42.982259 h 46.729307 v 23.28344 H 78.076553 Z" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:0.842261"
+         d="M 78.127933,42.879847 77.966513,22.90831 89.231443,42.645464 Z"
+         id="path3945" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:0.842261"
+         d="M 89.528893,42.893809 89.367483,22.922272 100.63242,42.659426 Z"
+         id="path3945-7" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:0.842261"
+         d="m 101.12667,42.647312 -0.16141,-19.971537 11.26493,19.737154 z"
+         id="path3945-7-0" />
+    </g>
   </g>
 </svg>
