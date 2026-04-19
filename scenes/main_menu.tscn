@@ -38,9 +38,9 @@ label_settings = ExtResource("1_l6cm7")
 
 [node name="Quit_Label" type="Label" parent="." unique_id=1418080008]
 offset_left = 70.0
-offset_top = 69.0
-offset_right = 133.0
-offset_bottom = 92.0
+offset_top = 65.0
+offset_right = 120.0
+offset_bottom = 71.0
 text = "  _____ ___     ___  _   _ ___ _____   __ _  ____ 
  |_   _/ _ \\   / _ \\| | | |_ _|_   _| | _| |/ /_ |
    | || | | | | | | | | | || |  | |   | || ' / | |
