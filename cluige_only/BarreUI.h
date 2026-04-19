@@ -16,6 +16,14 @@ struct _BarreUI
 	//virtual methods - private copy of mother class pointers
 	void (*_delete_super)(Script*);
 
+	SpriteText* BuildingSelect;
+	SpriteText* EnergyStored;
+	SpriteText* EnergyIncome;
+	SpriteText* AcidityLevel;
+	SpriteText* AcidityChange;
+	SpriteText* Date_Label;
+	SpriteText* Message_Label;
+
 	//virtual methods in .c
 	//void (*process)(Script* this_Script, float delta);
 };

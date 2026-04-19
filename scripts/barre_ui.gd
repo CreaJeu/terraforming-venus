@@ -9,9 +9,6 @@ extends Node2D
 @onready var Date_Label: Label = $TextLine1/Date_Label
 @onready var Message_Label: Label = $TextLine2/Text
 
-func _ready() -> void:
-	pass # Replace with function body.
-
 func update_selected_building_label(new_building: String):
 	BuildingSelect.text = "[ ← ] " + new_building + " [ → ]"
 	
@@ -34,6 +31,3 @@ func update_displayed_date(current_day: int):
 
 func set_message(message: String):
 	Message_Label.text = message
-
-func _process(delta: float) -> void:
-	pass
