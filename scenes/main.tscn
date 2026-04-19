@@ -17,6 +17,16 @@
 
 [node name="main_Node" type="Node" unique_id=767560022]
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1012836297]
+anchor_mode = 0
+script = ExtResource("5_o6xl0")
+
+[node name="Rain" parent="Camera2D" unique_id=869737895 instance=ExtResource("2_0wfyh")]
+z_index = -1
+
+[node name="ui_bar" parent="Camera2D" unique_id=1323076745 instance=ExtResource("3_tbgi4")]
+position = Vector2(0, 67)
+
 [node name="Windmills" parent="." unique_id=909114598 node_paths=PackedStringArray("upgrades") instance=ExtResource("4_jyhfs")]
 title = "Windmill Fields"
 upgrades = [NodePath("more_windmills_upgrade"), NodePath("more_windmills_upgrade2"), NodePath("more_windmills_upgrade3"), NodePath("better_windmills_upgrade")]
@@ -49,16 +59,6 @@ texture = ExtResource("3_jyhfs")
 position = Vector2(33, 37)
 scale = Vector2(0.7352941, 0.8230769)
 texture = ExtResource("3_jyhfs")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1012836297]
-anchor_mode = 0
-script = ExtResource("5_o6xl0")
-
-[node name="Rain" parent="Camera2D" unique_id=869737895 instance=ExtResource("2_0wfyh")]
-z_index = -1
-
-[node name="ui_bar" parent="Camera2D" unique_id=1323076745 instance=ExtResource("3_tbgi4")]
-position = Vector2(0, 67)
 
 [node name="bacteria_factory" parent="." unique_id=1136961121 node_paths=PackedStringArray("upgrades") instance=ExtResource("4_jyhfs")]
 position = Vector2(318, 1)

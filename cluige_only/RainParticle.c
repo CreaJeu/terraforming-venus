@@ -1,6 +1,7 @@
 #include <cluige.h>
 #include "RainParticle.h"
-
+void process_RainParticle(Script* this_Script, float delta);
+void ready_RainParticle(Script* this_Script);
 
 Script* instantiate_RainParticle(const SortedDictionary* parsed_params)
 {
@@ -9,17 +10,11 @@ Script* instantiate_RainParticle(const SortedDictionary* parsed_params)
 	RainParticle* new_RainParticle = iCluige.checked_malloc(sizeof(RainParticle));
 	new_Script->_sub_class = new_RainParticle;
 
-	//instantiate fields
-//	bool found = utils_float_from_parsed(&(new_RainParticle->speed), parsed_params, "speed");
-//	if(!found)
-//	{
-//		new_RainParticle->speed = 3;//default value from .gd
-//	}
-
 	//plug virtual mehods
 	new_RainParticle->_delete_super = new_Script->delete_Script;
 	new_Script->delete_Script = delete_RainParticle;
-//	new_Script->process = process_RainParticle;
+	new_Script->process = process_RainParticle;
+	new_Script->ready = ready_RainParticle;
 	return new_Script;
 }
 
@@ -42,13 +37,35 @@ void delete_RainParticle(Script* this_Script)
 	delete_super(this_Script);
 }
 
-//void process_RainParticle(Script* this_Script, float delta)
-//{
-//	RainParticle* this_RainParticle = (RainParticle*)(this_Script->_sub_class);
-//	if(iCluige.iInput.is_action_just_pressed(UP))
-//	{
-//		...
-//	}
-//	Node2D* this_Node2D = (Node2D*)(this_Script->node->_sub_class);
-//	iCluige.iNode2D.move_local(this_Node2D, (Vector2){dx * delta, dy * delta});
-//}
+void process_RainParticle(Script* this_Script, float delta)
+{
+	RainParticle* this_RainParticle = (RainParticle*)(this_Script->_sub_class);
+	Node2D* this_Node2D = (Node2D*)(this_Script->node->_sub_class);
+
+	iCluige.iNode2D.move_local(this_Node2D, (Vector2){10 * delta, 10 * delta});
+
+	Vector2 screen_size = iCluige.get_screen_size();
+	if (
+        this_Node2D->position.y > screen_size.y - 10
+        ||
+        this_Node2D->position.x > screen_size.x - 70
+	)
+	{
+        iCluige.iNode.queue_free(this_Script->node);
+	}
+}
+
+void ready_RainParticle(Script* this_Script)
+{
+    Node2D* this_Node2D = (Node2D*)(this_Script->node->_sub_class);
+    SpriteText* this_Label = (SpriteText*)(this_Node2D->_sub_class);
+
+    int particle_type = rand() % 2;
+
+    if (particle_type == 0){
+        iCluige.iSpriteText.set_text(this_Label, "\\");
+    }
+    if (particle_type == 1){
+        iCluige.iSpriteText.set_text(this_Label, "`");
+    }
+}
