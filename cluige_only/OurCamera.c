@@ -66,9 +66,7 @@ void ready_OurCamera(Script* this_Script)
 void process_OurCamera(Script* this_Script, float delta)
 {
 	OurCamera* this_OurCamera = (OurCamera*)(this_Script->_sub_class);
-
-//	Node2D* this_Node2D = (Node2D*)(this_Script->node->_sub_class);
-//	iCluige.iNode2D.move_local(this_Node2D, (Vector2){dx * delta, dy * delta});
+	Node2D* this_Node2D = (Node2D*)(this_Script->node->_sub_class);
 
 //	if(time_till_arrived > 0):
 	if(this_OurCamera->time_till_arrived > 0)
@@ -77,20 +75,32 @@ void process_OurCamera(Script* this_Script, float delta)
 		Deque* all_b = &(this_OurCamera->gs->all_buildings);
 		Building* b = (Building*)
 				iCluige.iDeque.at(all_b, this_OurCamera->gs->selected_building).ptr;
-		//Node2D* bn2d = b-> TODO
 //		if(delta < time_till_arrived):
 		if(delta < this_OurCamera->time_till_arrived)
 		{
 //			var whole_move = b.position - position
-			//Vector2 whole_move;
+            Vector2 building_position = b->_this_Node2D->position;
+            Vector2 this_position = this_Node2D->position;
+            float whole_move_x = building_position.x - this_position.x;
+            float whole_move_y = building_position.y - this_position.y;
 			//iCluige.iVector2.substract()
 //			var ratio: float = delta / time_till_arrived
+            float ratio = delta / this_OurCamera->time_till_arrived;
 //			time_till_arrived -= delta
+            this_OurCamera->time_till_arrived -= delta;
 //			translate(whole_move * ratio)
+            whole_move_x *= ratio;
+            whole_move_y *= ratio;
+            Vector2 whole_move = (Vector2){whole_move_x, whole_move_y};
+            iCluige.iNode2D.move_local(this_Node2D, (whole_move));
 		}
 //		else:
+        else{
 //			time_till_arrived = 0
+            this_OurCamera->time_till_arrived = 0;
 //			position = b.position
+            iCluige.iNode2D.move_local(this_Node2D, (b->_this_Node2D->position));
+        }
 	}
 }
 
