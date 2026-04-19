@@ -1,13 +1,7 @@
 class_name Rain
 extends Node2D
 
-@export var rain_particle_scene: PackedScene
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-func get_random_position_in_screen():
+func get_random_position_in_screen() -> Vector2:
 	var rng = RandomNumberGenerator.new()
 	var screenSize = get_viewport().get_visible_rect().size
 	
@@ -18,6 +12,7 @@ func get_random_position_in_screen():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var rain_particle_scene: PackedScene = load("res://scenes/rain_particle.tscn")
 	var rain_particle: RainParticle = rain_particle_scene.instantiate()
 	rain_particle.position = get_random_position_in_screen()
 	add_child(rain_particle)

@@ -1,6 +1,7 @@
 #include <cluige.h>
 #include "blink_label.h"
-
+void ready_BlinkLabel(Script* this_script);
+void process_BlinkLabel(Script* this_Script, float delta);
 
 Script* instantiate_BlinkLabel(const SortedDictionary* parsed_params)
 {
@@ -10,16 +11,18 @@ Script* instantiate_BlinkLabel(const SortedDictionary* parsed_params)
 	new_Script->_sub_class = new_BlinkLabel;
 
 	//instantiate fields
-//	bool found = utils_float_from_parsed(&(new_BlinkLabel->speed), parsed_params, "speed");
-//	if(!found)
-//	{
-//		new_BlinkLabel->speed = 3;//default value from .gd
-//	}
+	bool found = utils_float_from_parsed(&(new_BlinkLabel->timeout_at), parsed_params, "timeout_at");
+	if(!found)
+	{
+		new_BlinkLabel->timeout_at = 0.5;//default value from .gd
+	}
+	new_BlinkLabel->accumulated_time = 0;
 
 	//plug virtual mehods
 	new_BlinkLabel->_delete_super = new_Script->delete_Script;
 	new_Script->delete_Script = delete_BlinkLabel;
-//	new_Script->process = process_BlinkLabel;
+	new_Script->process = process_BlinkLabel;
+	new_Script->ready = ready_BlinkLabel;
 	return new_Script;
 }
 
@@ -42,13 +45,26 @@ void delete_BlinkLabel(Script* this_Script)
 	delete_super(this_Script);
 }
 
-//void process_BlinkLabel(Script* this_Script, float delta)
-//{
-//	BlinkLabel* this_BlinkLabel = (BlinkLabel*)(this_Script->_sub_class);
-//	if(iCluige.iInput.is_action_just_pressed(UP))
-//	{
-//		...
-//	}
-//	Node2D* this_Node2D = (Node2D*)(this_Script->node->_sub_class);
-//	iCluige.iNode2D.move_local(this_Node2D, (Vector2){dx * delta, dy * delta});
-//}
+void _on_timeout(BlinkLabel* this_BlinkLabel){
+    this_BlinkLabel->label->visible = !this_BlinkLabel->label->visible;
+}
+
+void process_BlinkLabel(Script* this_Script, float delta)
+{
+	BlinkLabel* this_BlinkLabel = (BlinkLabel*)(this_Script->_sub_class);
+	this_BlinkLabel->accumulated_time += delta;
+
+	if (this_BlinkLabel->accumulated_time > this_BlinkLabel->timeout_at){
+        this_BlinkLabel->accumulated_time = 0;
+        _on_timeout(this_BlinkLabel);
+	}
+
+}
+
+void ready_BlinkLabel(Script* this_Script){
+    BlinkLabel* this_BlinkLabel = (BlinkLabel*)(this_Script->_sub_class);
+    Node* this_Node = this_Script->node;
+
+    this_BlinkLabel->label = (Node2D*)iCluige.iNode.get_node(this_Node, "..")->_sub_class;
+
+}

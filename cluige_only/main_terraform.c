@@ -60,7 +60,7 @@ int main()
 	parse_scene("scenes/main.tscn");
 	parse_scene("scenes/rain_particle.tscn");
 	parse_scene("scenes/rain.tscn");
-	parse_scene("scenes/upgrade.tscn");
+//	parse_scene("scenes/upgrade.tscn");
 	parse_scene("scenes/upgrades/upgrade_better_windmills.tscn");
 	parse_scene("scenes/upgrades/upgrade_more_windmills.tscn");
 	parse_scene("scenes/upgrades/upgrade_better_bacteria.tscn");

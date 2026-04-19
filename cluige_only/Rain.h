@@ -11,7 +11,6 @@ struct _Rain
 //	Node2D* _this_Node2D;
 
 	//@export from .gd
-//	float speed;//cluige characters per second
 
 	//virtual methods - private copy of mother class pointers
 	void (*_delete_super)(Script*);

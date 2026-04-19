@@ -8,7 +8,7 @@ typedef struct _MainMenu MainMenu;
 struct _MainMenu
 {
 //	Script* _this_Script;
-//	Node2D* _this_Node2D;
+//	Node* _this_Node;
 
 	//@export from .gd
 //	float speed;//cluige characters per second

@@ -1,7 +1,6 @@
 class_name RainParticle
 extends Label
 
-
 func _ready() -> void:
 	var rng = RandomNumberGenerator.new()
 	var particle_type = rng.randi_range(0, 1)

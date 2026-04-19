@@ -11,7 +11,9 @@ struct _BlinkLabel
 //	Node2D* _this_Node2D;
 
 	//@export from .gd
-//	float speed;//cluige characters per second
+	float timeout_at;
+	float accumulated_time;
+	Node2D* label;
 
 	//virtual methods - private copy of mother class pointers
 	void (*_delete_super)(Script*);
