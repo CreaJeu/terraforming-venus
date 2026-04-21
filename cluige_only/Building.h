@@ -12,7 +12,8 @@ struct _Building
 
 	//@export from .gd
 	char* title;
-	Deque upgrades;
+	Deque upgrades_paths;//list<char*>
+	Deque upgrades;//list<Node*>
 	int selected_upgrade_index;
 
 	//virtual methods - private copy of mother class pointers

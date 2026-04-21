@@ -99,7 +99,7 @@ void process_OurCamera(Script* this_Script, float delta)
 //			time_till_arrived = 0
             this_OurCamera->time_till_arrived = 0;
 //			position = b.position
-            iCluige.iNode2D.move_local(this_Node2D, (b->_this_Node2D->position));
+            iCluige.iNode2D.set_local_position(this_Node2D, (b->_this_Node2D->position));
         }
 	}
 }

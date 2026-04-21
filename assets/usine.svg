@@ -24,14 +24,14 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="4.0885417"
-     inkscape:cx="11.006369"
-     inkscape:cy="36.443312"
+     inkscape:zoom="8.1770834"
+     inkscape:cx="70.073885"
+     inkscape:cy="25.008917"
      inkscape:window-width="1887"
-     inkscape:window-height="1023"
+     inkscape:window-height="1056"
      inkscape:window-x="0"
-     inkscape:window-y="33"
-     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
      id="defs2">
@@ -59,33 +59,36 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g848"
-       transform="translate(-77.532354,-21.065511)">
+       id="g362">
       <text
          xml:space="preserve"
          id="text3464"
          style="white-space:pre;shape-inside:url(#rect3466);fill:none;stroke:#ffffff;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="151.08203"
            y="32.34375"
-           id="tspan868"><tspan
+           id="tspan382"><tspan
              dx="0 4.9335938 4.2246094"
-             id="tspan866">rfe</tspan></tspan></text>
+             id="tspan380">rfe</tspan></tspan></text>
       <path
          id="rect3943"
          style="fill:none;stroke:#ffffff"
-         d="m 78.076553,42.982259 h 46.729307 v 23.28344 H 78.076553 Z" />
+         d="M 0.7304897,21.540231 H 47.459797 v 23.28344 H 0.7304897 Z"
+         sodipodi:nodetypes="ccccc" />
       <path
          style="fill:none;stroke:#ffffff;stroke-width:0.842261"
-         d="M 78.127933,42.879847 77.966513,22.90831 89.231443,42.645464 Z"
-         id="path3945" />
+         d="M 0.7818697,21.437819 0.6204497,1.4662819 11.88538,21.203436 Z"
+         id="path3945"
+         sodipodi:nodetypes="cccc" />
       <path
          style="fill:none;stroke:#ffffff;stroke-width:0.842261"
-         d="M 89.528893,42.893809 89.367483,22.922272 100.63242,42.659426 Z"
-         id="path3945-7" />
+         d="M 12.18283,21.451781 12.02142,1.4802439 23.286357,21.217398 Z"
+         id="path3945-7"
+         sodipodi:nodetypes="cccc" />
       <path
          style="fill:none;stroke:#ffffff;stroke-width:0.842261"
-         d="m 101.12667,42.647312 -0.16141,-19.971537 11.26493,19.737154 z"
-         id="path3945-7-0" />
+         d="M 23.780607,21.205284 23.619197,1.2337469 34.884127,20.970901 Z"
+         id="path3945-7-0"
+         sodipodi:nodetypes="cccc" />
     </g>
   </g>
 </svg>

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cegowu5wm8rcl"]
 
-[ext_resource type="PackedScene" uid="uid://bnigiwvjx0pm4" path="res://scenes/rain.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" path="res://scenes/rain.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://b6thy2gm65e1f" path="res://scripts/game_state.gd" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://dry6i63t1elkt" path="res://assets/eolienne.svg" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://hodjx1ojhhcg" path="res://scenes/barre_ui.tscn" id="3_tbgi4"]
@@ -27,9 +27,9 @@ z_index = -1
 [node name="ui_bar" parent="Camera2D" unique_id=1323076745 instance=ExtResource("3_tbgi4")]
 position = Vector2(0, 67)
 
-[node name="Windmills" parent="." unique_id=909114598 node_paths=PackedStringArray("upgrades") instance=ExtResource("4_jyhfs")]
+[node name="Windmills" parent="." unique_id=909114598 instance=ExtResource("4_jyhfs")]
 title = "Windmill Fields"
-upgrades = [NodePath("more_windmills_upgrade"), NodePath("more_windmills_upgrade2"), NodePath("more_windmills_upgrade3"), NodePath("better_windmills_upgrade")]
+upgrades_paths = Array[String](["more_windmills_upgrade", "more_windmills_upgrade2", "more_windmills_upgrade3", "better_windmills_upgrade"])
 
 [node name="more_windmills_upgrade" parent="Windmills" unique_id=2074544727 node_paths=PackedStringArray("gamestate") instance=ExtResource("3_tefeu")]
 position = Vector2(143, 12)
@@ -60,10 +60,10 @@ position = Vector2(33, 37)
 scale = Vector2(0.7352941, 0.8230769)
 texture = ExtResource("3_jyhfs")
 
-[node name="bacteria_factory" parent="." unique_id=1136961121 node_paths=PackedStringArray("upgrades") instance=ExtResource("4_jyhfs")]
-position = Vector2(318, 1)
+[node name="bacteria_factory" parent="." unique_id=1136961121 instance=ExtResource("4_jyhfs")]
+position = Vector2(318, 0)
 title = "Bacteria Factory"
-upgrades = [NodePath("more_bacteria_upgrade"), NodePath("more_bacteria_upgrade2"), NodePath("better_bacteria_upgrade"), NodePath("super_bacteria_upgrade")]
+upgrades_paths = Array[String](["more_bacteria_upgrade", "more_bacteria_upgrade2", "better_bacteria_upgrade", "super_bacteria_upgrade"])
 
 [node name="more_bacteria_upgrade" parent="bacteria_factory" unique_id=1167395263 node_paths=PackedStringArray("gamestate") instance=ExtResource("9_a8y0u")]
 position = Vector2(142, 11)
@@ -82,15 +82,16 @@ position = Vector2(142, 50)
 gamestate = NodePath("../../gameState_Node")
 
 [node name="Usine" type="Sprite2D" parent="bacteria_factory" unique_id=55223594]
-position = Vector2(104, 49)
+position = Vector2(104, 41)
 texture = ExtResource("4_tbgi4")
 
 [node name="BacBacteries" type="Sprite2D" parent="bacteria_factory" unique_id=479081016]
-position = Vector2(53, 45)
+position = Vector2(64, 36.55)
+scale = Vector2(0.825, 0.825)
 texture = ExtResource("11_ya4ey")
 
 [node name="BacBacteries2" type="Sprite2D" parent="bacteria_factory" unique_id=1134593758]
-position = Vector2(28, 60)
+position = Vector2(39, 51.55)
 texture = ExtResource("11_ya4ey")
 
 [node name="gameState_Node" type="Node" parent="." unique_id=2142190266 node_paths=PackedStringArray("all_buildings", "camera", "ui_bar")]

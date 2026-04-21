@@ -7,6 +7,13 @@
 void process_GameState(Script* this_Script, float delta);
 void ready_GameState(Script* this_Script);
 
+int ok_action;
+int left_action;
+int right_action;
+int up_action;
+int down_action;
+int exit_action;
+
 Script* instantiate_GameState(const SortedDictionary* parsed_params)
 {
 	//mallocs
@@ -148,19 +155,18 @@ void process_GameState(Script* this_Script, float delta)
 	Deque* bb = &(this_GameState->all_buildings);
 	Building* b = (Building*)iCluige.iDeque.at(bb, selec).ptr;
 	int nbb = iCluige.iDeque.size(bb);
-	int ok_action = iCluige.iInput.action_id_from_name("ok", true);
-	int left_action = iCluige.iInput.action_id_from_name("left", true);
-	int right_action = iCluige.iInput.action_id_from_name("right", true);
-	int up_action = iCluige.iInput.action_id_from_name("up", true);
-	int down_action = iCluige.iInput.action_id_from_name("down", true);
-	int exit_action = iCluige.iInput.action_id_from_name("exit", true);
 	if(iCluige.iInput.is_action_just_pressed(ok_action))
 	{
 		applySelectedUpgrade(b);
 	}
 	if(iCluige.iInput.is_action_just_pressed(left_action))
 	{
-		this_GameState->selected_building = (selec - 1) % nbb;
+		selec--;
+		if(selec < 0)
+		{
+			selec = nbb - 1;
+		}
+		this_GameState->selected_building = selec;
 		update_selected_building_label(
 			this_GameState->ui_bar, b->title);
 		start_moving(this_GameState->camera);
@@ -203,5 +209,12 @@ void ready_GameState(Script* this_Script)
 	this_GameState->ui_bar = (BarreUI*)(n->script->_sub_class);
 
 	set_ui(this_GameState);
+
+	ok_action = iCluige.iInput.action_id_from_name("ok", true);
+	left_action = iCluige.iInput.action_id_from_name("left", true);
+	right_action = iCluige.iInput.action_id_from_name("right", true);
+	up_action = iCluige.iInput.action_id_from_name("up", true);
+	down_action = iCluige.iInput.action_id_from_name("down", true);
+	exit_action = iCluige.iInput.action_id_from_name("exit", true);
 }
 

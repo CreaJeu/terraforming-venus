@@ -4,11 +4,17 @@ extends Node2D
 @export
 var title: String = "~  Placeholder Building cool  ~"
 
-@export var upgrades: Array[Node2D]
+@export var upgrades_paths: Array[String]
 @export var selected_upgrade_index: int = 0
+
+var upgrades: Array[Node2D]
 
 func _ready() -> void:	
 	$title_Label.text = make_ui_title_from_text(title)
+	for i in upgrades_paths.size():
+		var path = upgrades_paths[i]
+		var upgr_n2D: Node2D = get_node(path)
+		upgrades.push_back(upgr_n2D)
 	upgrades[selected_upgrade_index].select()
 
 func make_ui_title_from_text(text: String) -> String:
