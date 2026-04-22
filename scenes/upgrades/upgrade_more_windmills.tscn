@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dpgyt6sjh0ln1" path="res://scripts/upgrades/more_windmills.gd" id="1_dvb5a"]
 [ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="2_ihlaf"]
-[ext_resource type="PackedScene" uid="uid://cd2tvgt7xf8h3" path="res://scenes/blink_label.tscn" id="3_q17hp"]
+[ext_resource type="PackedScene" uid="uid://be8lu6sse7fpw" path="res://scenes/blink_label.tscn" id="3_q17hp"]
 
 [node name="more_windmills_upgrade" type="Node2D" unique_id=2074544727]
 script = ExtResource("1_dvb5a")

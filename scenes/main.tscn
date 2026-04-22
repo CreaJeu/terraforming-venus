@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cegowu5wm8rcl"]
 
-[ext_resource type="PackedScene" path="res://scenes/rain.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://cch5qqknwh7gl" path="res://scenes/rain.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://b6thy2gm65e1f" path="res://scripts/game_state.gd" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://dry6i63t1elkt" path="res://assets/eolienne.svg" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://hodjx1ojhhcg" path="res://scenes/barre_ui.tscn" id="3_tbgi4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dceryyv6hwq4t" path="res://scenes/upgrades/upgrade_better_windmills.tscn" id="4_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bt4l0txw36iug" path="res://assets/usine.svg" id="4_tbgi4"]
 [ext_resource type="Script" uid="uid://tt4imcuxn1kh" path="res://scripts/OurCamera.gd" id="5_o6xl0"]
+[ext_resource type="Script" uid="uid://ceei3rsw4qpjx" path="res://scripts/upgrades/upgrade_applyer.gd" id="6_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://7ma0qjwnwmwr" path="res://assets/transformateur.svg" id="8_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cyjcgnixmq7si" path="res://scenes/upgrades/upgrade_more_bacteria.tscn" id="9_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://bt75dqc0het1a" path="res://scenes/upgrades/upgrade_better_bacteria.tscn" id="10_jkv2x"]
@@ -35,17 +36,30 @@ upgrades_paths = Array[String](["more_windmills_upgrade", "more_windmills_upgrad
 position = Vector2(143, 12)
 gamestate = NodePath("../../gameState_Node")
 
+[node name="applyer_Node" type="Node" parent="Windmills/more_windmills_upgrade" unique_id=1547696841]
+script = ExtResource("6_jkv2x")
+
 [node name="more_windmills_upgrade2" parent="Windmills" unique_id=143629266 node_paths=PackedStringArray("gamestate") instance=ExtResource("3_tefeu")]
 position = Vector2(143, 24)
 gamestate = NodePath("../../gameState_Node")
+
+[node name="applyer_Node" type="Node" parent="Windmills/more_windmills_upgrade2" unique_id=657588283]
+script = ExtResource("6_jkv2x")
 
 [node name="more_windmills_upgrade3" parent="Windmills" unique_id=1436794835 node_paths=PackedStringArray("gamestate") instance=ExtResource("3_tefeu")]
 position = Vector2(142, 37)
 gamestate = NodePath("../../gameState_Node")
 
+[node name="applyer_Node" type="Node" parent="Windmills/more_windmills_upgrade3" unique_id=198349076]
+script = ExtResource("6_jkv2x")
+
 [node name="better_windmills_upgrade" parent="Windmills" unique_id=1010106578 node_paths=PackedStringArray("gamestate") instance=ExtResource("4_o6xl0")]
 position = Vector2(142, 50)
 gamestate = NodePath("../../gameState_Node")
+
+[node name="applyer_Node" type="Node" parent="Windmills/better_windmills_upgrade" unique_id=415425593]
+script = ExtResource("6_jkv2x")
+price = 400
 
 [node name="Transformateur" type="Sprite2D" parent="Windmills" unique_id=240555462]
 position = Vector2(116, 46)
@@ -69,17 +83,33 @@ upgrades_paths = Array[String](["more_bacteria_upgrade", "more_bacteria_upgrade2
 position = Vector2(142, 11)
 gamestate = NodePath("../../gameState_Node")
 
+[node name="applyer_Node" type="Node" parent="bacteria_factory/more_bacteria_upgrade" unique_id=225804384]
+script = ExtResource("6_jkv2x")
+price = 150
+
 [node name="more_bacteria_upgrade2" parent="bacteria_factory" unique_id=1326053446 node_paths=PackedStringArray("gamestate") instance=ExtResource("9_a8y0u")]
 position = Vector2(142, 24)
 gamestate = NodePath("../../gameState_Node")
+
+[node name="applyer_Node" type="Node" parent="bacteria_factory/more_bacteria_upgrade2" unique_id=693022955]
+script = ExtResource("6_jkv2x")
+price = 150
 
 [node name="better_bacteria_upgrade" parent="bacteria_factory" unique_id=323965203 node_paths=PackedStringArray("gamestate") instance=ExtResource("10_jkv2x")]
 position = Vector2(142, 38)
 gamestate = NodePath("../../gameState_Node")
 
+[node name="applyer_Node" type="Node" parent="bacteria_factory/better_bacteria_upgrade" unique_id=1060594792]
+script = ExtResource("6_jkv2x")
+price = 500
+
 [node name="super_bacteria_upgrade" parent="bacteria_factory" unique_id=1932132369 node_paths=PackedStringArray("gamestate") instance=ExtResource("11_jbj1t")]
 position = Vector2(142, 50)
 gamestate = NodePath("../../gameState_Node")
+
+[node name="applyer_Node" type="Node" parent="bacteria_factory/super_bacteria_upgrade" unique_id=1478645006]
+script = ExtResource("6_jkv2x")
+price = 200
 
 [node name="Usine" type="Sprite2D" parent="bacteria_factory" unique_id=55223594]
 position = Vector2(104, 41)
@@ -99,3 +129,8 @@ script = ExtResource("2_sugp2")
 all_buildings = [NodePath("../Windmills"), NodePath("../bacteria_factory")]
 camera = NodePath("../Camera2D")
 ui_bar = NodePath("../Camera2D/ui_bar")
+
+[node name="startCooldown_Timer" type="Timer" parent="." unique_id=72031176]
+wait_time = 0.119
+one_shot = true
+autostart = true

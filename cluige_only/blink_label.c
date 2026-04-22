@@ -1,5 +1,6 @@
 #include <cluige.h>
 #include "blink_label.h"
+
 void ready_BlinkLabel(Script* this_script);
 
 Script* instantiate_BlinkLabel(const SortedDictionary* parsed_params)

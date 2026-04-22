@@ -1,6 +1,6 @@
 [gd_resource type="LabelSettings" format=3 uid="uid://po5dxq7k46vm"]
 
-[ext_resource type="FontFile" uid="uid://jtdcmn7bwuht" path="res://godot_only/PressStart2P.ttf" id="1_l522s"]
+[ext_resource type="FontFile" uid="uid://fphfsb7st135" path="res://godot_only/PressStart2P.ttf" id="1_l522s"]
 
 [resource]
 line_spacing = 0.0

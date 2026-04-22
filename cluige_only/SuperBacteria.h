@@ -3,6 +3,7 @@
 
 //typedef Script;
 //typedef Node2D;
+#include "GameState.h"
 
 typedef struct _SuperBacteria SuperBacteria;
 struct _SuperBacteria
@@ -11,18 +12,18 @@ struct _SuperBacteria
 //	Node2D* _this_Node2D;
 
 	//@export from .gd
-//	float speed;//cluige characters per second
+	int acidity_reduction;
+	bool selected;
+	GameState* gamestate;
 
 	//virtual methods - private copy of mother class pointers
 	void (*_delete_super)(Script*);
-
-	//virtual methods in .c
-	//void (*process)(Script* this_Script, float delta);
 };
 
-//Script* instantiate_SuperBacteria(const SortedDictionary* parsed_params);
 void register_SuperBacteriaFactory();
 void delete_SuperBacteria(Script* this_Script);
-//void process_SuperBacteria(Script* this_Script, float delta);
+
+//see exit_tree()
+//bool apply_SuperBacteria(SuperBacteria* this_SuperBacteria, GameState* gamestate);
 
 #endif // _H_INCLUDED

@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cd2tvgt7xf8h3"]
+[gd_scene format=3 uid="uid://be8lu6sse7fpw"]
 
-[ext_resource type="Script" uid="uid://d74olkcj0vdg" path="res://scripts/blink_label.gd" id="1_q7tpo"]
+[ext_resource type="Script" path="res://scripts/blink_label.gd" id="1_q7tpo"]
 
 [node name="BlinkLabel" type="Node" unique_id=1665782607]
 script = ExtResource("1_q7tpo")

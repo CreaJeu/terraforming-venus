@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4qsac17plpo6" path="res://scripts/upgrades/produce_more_bacteria.gd" id="1_2apw4"]
 [ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="2_g3dul"]
-[ext_resource type="PackedScene" uid="uid://cd2tvgt7xf8h3" path="res://scenes/blink_label.tscn" id="3_s4uq4"]
+[ext_resource type="PackedScene" uid="uid://be8lu6sse7fpw" path="res://scenes/blink_label.tscn" id="3_s4uq4"]
 
 [node name="more_bacteria_upgrade" type="Node2D" unique_id=2074544727]
 script = ExtResource("1_2apw4")

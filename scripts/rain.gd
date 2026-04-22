@@ -11,7 +11,7 @@ func get_random_position_in_screen() -> Vector2:
 	return Vector2(rndX, rndY)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var rain_particle_scene: PackedScene = load("res://scenes/rain_particle.tscn")
 	var rain_particle: RainParticle = rain_particle_scene.instantiate()
 	rain_particle.position = get_random_position_in_screen()

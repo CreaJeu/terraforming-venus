@@ -3,6 +3,7 @@
 
 //typedef Script;
 //typedef Node2D;
+#include "GameState.h"
 
 typedef struct _ImproveBacteria ImproveBacteria;
 struct _ImproveBacteria
@@ -11,18 +12,18 @@ struct _ImproveBacteria
 //	Node2D* _this_Node2D;
 
 	//@export from .gd
-//	float speed;//cluige characters per second
+	int acidity_reduction_modifier;
+	bool selected;
+	GameState* gamestate;
 
 	//virtual methods - private copy of mother class pointers
 	void (*_delete_super)(Script*);
-
-	//virtual methods in .c
-	//void (*process)(Script* this_Script, float delta);
 };
 
-//Script* instantiate_ImproveBacteria(const SortedDictionary* parsed_params);
 void register_ImproveBacteriaFactory();
 void delete_ImproveBacteria(Script* this_Script);
-//void process_ImproveBacteria(Script* this_Script, float delta);
+
+//see exit_tree()
+//bool apply_ImproveBacteria(ImproveBacteria* this_ImproveBacteria, GameState* gamestate);
 
 #endif // _H_INCLUDED

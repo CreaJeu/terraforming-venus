@@ -1,6 +1,9 @@
 #include <cluige.h>
 #include "ProduceMoreBacteria.h"
+#include "BarreUI.h"
 
+void ready_ProduceMoreBacteria(Script* this_Script);
+static void exit_tree(Script*);
 
 Script* instantiate_ProduceMoreBacteria(const SortedDictionary* parsed_params)
 {
@@ -10,16 +13,25 @@ Script* instantiate_ProduceMoreBacteria(const SortedDictionary* parsed_params)
 	new_Script->_sub_class = new_ProduceMoreBacteria;
 
 	//instantiate fields
-//	bool found = utils_float_from_parsed(&(new_ProduceMoreBacteria->speed), parsed_params, "speed");
+	bool found;
+	found = utils_float_from_parsed(&(new_ProduceMoreBacteria->bacteria_reduction_improvement), parsed_params, "bacteria_reduction_improvement");
+	if(!found)
+	{
+		new_ProduceMoreBacteria->bacteria_reduction_improvement = .1;//default value from .gd
+	}
+
+//	found = utils_bool_from_parsed(&(new_ProduceMoreBacteria->selected), parsed_params, "selected");
 //	if(!found)
 //	{
-//		new_ProduceMoreBacteria->speed = 3;//default value from .gd
+		new_ProduceMoreBacteria->selected = false;//default value from .gd
 //	}
+
 
 	//plug virtual mehods
 	new_ProduceMoreBacteria->_delete_super = new_Script->delete_Script;
 	new_Script->delete_Script = delete_ProduceMoreBacteria;
-//	new_Script->process = process_ProduceMoreBacteria;
+	new_Script->ready = ready_ProduceMoreBacteria;
+	new_Script->exit_tree = exit_tree;
 	return new_Script;
 }
 
@@ -42,13 +54,19 @@ void delete_ProduceMoreBacteria(Script* this_Script)
 	delete_super(this_Script);
 }
 
-//void process_ProduceMoreBacteria(Script* this_Script, float delta)
-//{
-//	ProduceMoreBacteria* this_ProduceMoreBacteria = (ProduceMoreBacteria*)(this_Script->_sub_class);
-//	if(iCluige.iInput.is_action_just_pressed(UP))
-//	{
-//		...
-//	}
-//	Node2D* this_Node2D = (Node2D*)(this_Script->node->_sub_class);
-//	iCluige.iNode2D.move_local(this_Node2D, (Vector2){dx * delta, dy * delta});
-//}
+void ready_ProduceMoreBacteria(Script* this_Script)
+{
+	ProduceMoreBacteria* this_ProduceMoreBacteria = (ProduceMoreBacteria*)(this_Script->_sub_class);
+	Node* root = iCluige.public_root_2D;
+	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node");
+	this_ProduceMoreBacteria->gamestate = (GameState*)gamestate_Node->script->_sub_class;
+}
+
+//bool apply_ProduceMoreBacteria(ProduceMoreBacteria* this_ProduceMoreBacteria, GameState* gamestate)
+static void exit_tree(Script* this_Script)
+{
+	ProduceMoreBacteria* this_ProduceMoreBacteria = (ProduceMoreBacteria*)(this_Script->_sub_class);
+	GameState* gs = this_ProduceMoreBacteria->gamestate;
+    set_acidity_change(gs, gs->toxicity_reduction + this_ProduceMoreBacteria->bacteria_reduction_improvement);
+    set_message(gs->ui_bar, "Shoking bacteria with a lot of electricity surprisingly makes more of them. That was definetly why we tried that.");
+}

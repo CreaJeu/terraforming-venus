@@ -31,27 +31,25 @@ func applySelectedUpgrade():
 		return
 	# Get selected upgrade and apply it
 	var upgrade = upgrades[selected_upgrade_index]
-	# TODO: return if not enough money
-	if !upgrade.apply():
+	var upgr_applyer = upgrade.get_node("applyer_Node")
+	if !upgr_applyer.apply_upgrade():
 		return
 	
 	upgrades.remove_at(selected_upgrade_index)
 	if upgrades.size() > 0:
-		selected_upgrade_index = (selected_upgrade_index + 1) % upgrades.size()
+		selected_upgrade_index = selected_upgrade_index % upgrades.size()
 		upgrades[selected_upgrade_index].select()
 	else:
 		selected_upgrade_index = 0
-	
-	# Destroy the applied upgrade
-	upgrade.queue_free()
-	
 
 func select_up():
-	upgrades[selected_upgrade_index].deselect()
-	selected_upgrade_index = (selected_upgrade_index - 1) % upgrades.size()
-	upgrades[selected_upgrade_index].select()
+	if(upgrades.size() > 0):
+		upgrades[selected_upgrade_index].deselect()
+		selected_upgrade_index = (selected_upgrade_index - 1) % upgrades.size()
+		upgrades[selected_upgrade_index].select()
 
 func select_down():
-	upgrades[selected_upgrade_index].deselect()
-	selected_upgrade_index = (selected_upgrade_index + 1) % upgrades.size()
-	upgrades[selected_upgrade_index].select()
+	if(upgrades.size() > 0):
+		upgrades[selected_upgrade_index].deselect()
+		selected_upgrade_index = (selected_upgrade_index + 1) % upgrades.size()
+		upgrades[selected_upgrade_index].select()

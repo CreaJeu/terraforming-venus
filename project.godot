@@ -13,8 +13,7 @@ config_version=5
 config/name="terraforming venus"
 run/main_scene="uid://dx2eag1egw7cb"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-run/max_fps=25
-config/icon="uid://b2ofqiqq7dbp6"
+run/max_fps=20
 
 [display]
 

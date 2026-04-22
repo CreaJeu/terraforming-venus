@@ -15,6 +15,7 @@ var time_passed: float
 var current_day: int = 1
 
 func _ready() -> void:
+	$"../Camera2D".make_current()
 	set_ui()
 
 func set_ui():
@@ -54,7 +55,12 @@ func set_acidity_change(new_acidity_change: float):
 	ui_bar.update_acidity_change_label(toxicity_reduction)
 
 func _end_game():
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	#get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	queue_free()
+	var other_path = "res://scenes/main_menu.tscn"
+	var other_packed: PackedScene = load(other_path)
+	var other_scene:Node = other_packed.instantiate()
+	get_node("..").add_child(other_scene)
 	# TODO: end game scene
 
 func _on_day_timeout():
@@ -69,6 +75,8 @@ func display_message(message: String):
 	ui_bar.set_message(message)
 
 func _process(delta: float) -> void:
+	if(!$"../startCooldown_Timer".is_stopped()):
+		return
 	time_passed += delta
 	if time_passed > day_duration:
 		_on_day_timeout()

@@ -1,6 +1,9 @@
 #include <cluige.h>
 #include "SuperBacteria.h"
+#include "BarreUI.h"
 
+void ready_SuperBacteria(Script* this_Script);
+static void exit_tree(Script*);
 
 Script* instantiate_SuperBacteria(const SortedDictionary* parsed_params)
 {
@@ -10,16 +13,25 @@ Script* instantiate_SuperBacteria(const SortedDictionary* parsed_params)
 	new_Script->_sub_class = new_SuperBacteria;
 
 	//instantiate fields
-//	bool found = utils_float_from_parsed(&(new_SuperBacteria->speed), parsed_params, "speed");
+	bool found;
+	found = utils_int_from_parsed(&(new_SuperBacteria->acidity_reduction), parsed_params, "acidity_reduction");
+	if(!found)
+	{
+		new_SuperBacteria->acidity_reduction = 10;//default value from .gd
+	}
+
+//	found = utils_bool_from_parsed(&(new_SuperBacteria->selected), parsed_params, "selected");
 //	if(!found)
 //	{
-//		new_SuperBacteria->speed = 3;//default value from .gd
+		new_SuperBacteria->selected = false;//default value from .gd
 //	}
+
 
 	//plug virtual mehods
 	new_SuperBacteria->_delete_super = new_Script->delete_Script;
 	new_Script->delete_Script = delete_SuperBacteria;
-//	new_Script->process = process_SuperBacteria;
+	new_Script->ready = ready_SuperBacteria;
+	new_Script->exit_tree = exit_tree;
 	return new_Script;
 }
 
@@ -42,13 +54,19 @@ void delete_SuperBacteria(Script* this_Script)
 	delete_super(this_Script);
 }
 
-//void process_SuperBacteria(Script* this_Script, float delta)
-//{
-//	SuperBacteria* this_SuperBacteria = (SuperBacteria*)(this_Script->_sub_class);
-//	if(iCluige.iInput.is_action_just_pressed(UP))
-//	{
-//		...
-//	}
-//	Node2D* this_Node2D = (Node2D*)(this_Script->node->_sub_class);
-//	iCluige.iNode2D.move_local(this_Node2D, (Vector2){dx * delta, dy * delta});
-//}
+void ready_SuperBacteria(Script* this_Script)
+{
+	SuperBacteria* this_SuperBacteria = (SuperBacteria*)(this_Script->_sub_class);
+	Node* root = iCluige.public_root_2D;
+	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node");
+	this_SuperBacteria->gamestate = (GameState*)gamestate_Node->script->_sub_class;
+}
+
+//bool apply_SuperBacteria(SuperBacteria* this_SuperBacteria, GameState* gamestate)
+static void exit_tree(Script* this_Script)
+{
+	SuperBacteria* this_SuperBacteria = (SuperBacteria*)(this_Script->_sub_class);
+	GameState* gs = this_SuperBacteria->gamestate;
+    remove_acidity(gs, this_SuperBacteria->acidity_reduction);
+    set_message(gs->ui_bar, "Our scientists cultivated a gigantic bacteria to help cleanse the rain. It broke the containment and ate a ton of sulfuric acid before dying.");
+}

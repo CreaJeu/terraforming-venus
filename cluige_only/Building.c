@@ -1,6 +1,7 @@
 #include <cluige.h>
 #include "Building.h"
 #include "blink_label.h"
+#include "UpgradeApplyer.h"
 #include <string.h>
 
 void ready_Building(Script* this_Script);
@@ -77,6 +78,7 @@ void make_ui_title_from_text(char* out, char* title)
 void select_upgrade(Building* this_Building, int i)
 {
 //	Node* up_n = iCluige.iNode.get_child(this_Node, i+2);
+	this_Building->selected_upgrade_index = i;
 	Node* up_n = (Node*)iCluige.iDeque.at(&(this_Building->upgrades), i).ptr;
 	Node* label_n = iCluige.iNode.get_node(up_n, "pointer_Label");
 	Node2D* label_n2D = (Node2D*)label_n->_sub_class;
@@ -128,8 +130,8 @@ void ready_Building(Script* this_Script)
 	}
 	//no more need of upgrades_paths
 	iCluige.iDeque.pre_delete_Deque(&(this_Building->upgrades_paths));
-	select_upgrade(this_Building, this_Building->selected_upgrade_index);
-	deselect_upgrade(this_Building, 1);//gamejam quick&dirty
+	select_upgrade(this_Building, 0);//gamejam quick&dirty
+	deselect_upgrade(this_Building, 1);
 	deselect_upgrade(this_Building, 2);
 	deselect_upgrade(this_Building, 3);
 }
@@ -157,43 +159,61 @@ void delete_Building(Script* this_Script)
 
 void applySelectedUpgrade(Building* this_Building)
 {
-/////TODO
-//	Deque* ups = &(this_Building->upgrades);
-//	int selec = this_Building->selected_upgrade_index;
-//	int nbb = iCluige.iDeque.size(ups);
-//	if(nbb == 0)
-//	{
-//		return;
-//	}
-//	Building* b = (Building*)iCluige.iDeque.at(ups, selec).ptr;
+	Deque* ups = &(this_Building->upgrades);
+	int nbb = iCluige.iDeque.size(ups);
+	if(nbb == 0)
+	{
+		return;
+	}
+	int selec = this_Building->selected_upgrade_index;
+	Node* upgr_node = (Node*)iCluige.iDeque.at(ups, selec).ptr;
+	Node* applyer_node = iCluige.iNode.get_node(upgr_node, "applyer_Node");
+	UpgradeApplyer* applyer = (UpgradeApplyer*)applyer_node->script->_sub_class;
+	if(!apply_upgrade(applyer))
+	{
+		return;
+	}
+	iCluige.iDeque.remove(ups, selec);
+	if(nbb > 1)
+	{
+		if(selec >= nbb - 1)
+		{
+			selec--;
+		}
+		select_upgrade(this_Building, selec);
+	}
 }
 
 void select_up(Building* this_Building)
 {
+	Deque* ups = &(this_Building->upgrades);
+	int nbb = iCluige.iDeque.size(ups);
+	if(nbb == 0)
+	{
+		return;
+	}
 	int selec = this_Building->selected_upgrade_index;
 	deselect_upgrade(this_Building, selec);
 
 	selec = selec - 1;
 	if(selec < 0)
 	{
-		Deque* ups = &(this_Building->upgrades);
-		int nbb = iCluige.iDeque.size(ups);
 		selec = nbb - 1;
 	}
-	this_Building->selected_upgrade_index = selec;
-
 	select_upgrade(this_Building,  selec);
 }
 
 void select_down(Building* this_Building)
 {
+	Deque* ups = &(this_Building->upgrades);
+	int nbb = iCluige.iDeque.size(ups);
+	if(nbb == 0)
+	{
+		return;
+	}
 	int selec = this_Building->selected_upgrade_index;
 	deselect_upgrade(this_Building, selec);
 
-	Deque* ups = &(this_Building->upgrades);
-	int nbb = iCluige.iDeque.size(ups);
 	selec = (selec + 1) % nbb;
-	this_Building->selected_upgrade_index = selec;
-
 	select_upgrade(this_Building, selec);
 }

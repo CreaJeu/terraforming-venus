@@ -1,8 +1,6 @@
-[gd_scene format=3 uid="uid://bnigiwvjx0pm4"]
+[gd_scene format=3 uid="uid://cch5qqknwh7gl"]
 
 [ext_resource type="Script" uid="uid://6ybnmqpilbff" path="res://scripts/rain.gd" id="1_rru6j"]
-[ext_resource type="PackedScene" uid="uid://bihpp0nlx2ua2" path="res://scenes/rain_particle.tscn" id="2_5mvay"]
 
 [node name="Rain" type="Node2D" unique_id=869737895]
 script = ExtResource("1_rru6j")
-rain_particle_scene = ExtResource("2_5mvay")

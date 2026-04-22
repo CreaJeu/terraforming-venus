@@ -3,6 +3,7 @@
 #include "BarreUI.h"
 
 void ready_MoreWindmills(Script* this_Script);
+static void exit_tree(Script*);
 
 Script* instantiate_MoreWindmills(const SortedDictionary* parsed_params)
 {
@@ -19,23 +20,18 @@ Script* instantiate_MoreWindmills(const SortedDictionary* parsed_params)
 		new_MoreWindmills->additional_energy = 10;//default value from .gd
 	}
 
-	found = utils_int_from_parsed(&(new_MoreWindmills->price), parsed_params, "price");
-	if(!found)
-	{
-		new_MoreWindmills->price = 100;//default value from .gd
-	}
-
-	found = utils_bool_from_parsed(&(new_MoreWindmills->selected), parsed_params, "selected");
-	if(!found)
-	{
+//	found = utils_bool_from_parsed(&(new_MoreWindmills->selected), parsed_params, "selected");
+//	if(!found)
+//	{
 		new_MoreWindmills->selected = false;//default value from .gd
-	}
+//	}
 
 
 	//plug virtual mehods
 	new_MoreWindmills->_delete_super = new_Script->delete_Script;
 	new_Script->delete_Script = delete_MoreWindmills;
-//	new_Script->process = process_MoreWindmills;
+	new_Script->ready = ready_MoreWindmills;
+	new_Script->exit_tree = exit_tree;
 	return new_Script;
 }
 
@@ -62,19 +58,15 @@ void ready_MoreWindmills(Script* this_Script)
 {
 	MoreWindmills* this_MoreWindmills = (MoreWindmills*)(this_Script->_sub_class);
 	Node* root = iCluige.public_root_2D;
-	Node* gamestate_Node = iCluige.iNode.get_node(root, "gameState_Node");
-	this_MoreWindmills->gamestate = (GameState*)gamestate_Node->script;
+	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node");
+	this_MoreWindmills->gamestate = (GameState*)gamestate_Node->script->_sub_class;
 }
 
-bool apply_MoreWindmills(MoreWindmills* this_MoreWindmills, GameState* gamestate)
+//bool apply_MoreWindmills(MoreWindmills* this_MoreWindmills, GameState* gamestate)
+static void exit_tree(Script* this_Script)
 {
-    if (gamestate->energy < this_MoreWindmills->price){
-        set_message(gamestate->ui_bar, "Not enough energy for this upgrade.");
-        return false;
-    }
-    take_from_energy_storage(gamestate, this_MoreWindmills->price);
-    set_energy_income(gamestate, gamestate->energy_income+this_MoreWindmills->additional_energy);
-    set_message(gamestate->ui_bar, "More windmills = More energy. Luckily there is no lack of wind on Venus.");
-
-    return true;
+	MoreWindmills* this_MoreWindmills = (MoreWindmills*)(this_Script->_sub_class);
+	GameState* gs = this_MoreWindmills->gamestate;
+    set_energy_income(gs, gs->energy_income+this_MoreWindmills->additional_energy);
+    set_message(gs->ui_bar, "More windmills = More energy. Luckily there is no lack of wind on Venus.");
 }
