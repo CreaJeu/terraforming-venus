@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dry6i63t1elkt" path="res://assets/eolienne.svg" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://hodjx1ojhhcg" path="res://scenes/barre_ui.tscn" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cwxythcsu30vk" path="res://scenes/upgrades/upgrade_more_windmills.tscn" id="3_tefeu"]
+[ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="4_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://uuimb4h1kpls" path="res://scenes/building.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dceryyv6hwq4t" path="res://scenes/upgrades/upgrade_better_windmills.tscn" id="4_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bt4l0txw36iug" path="res://assets/usine.svg" id="4_tbgi4"]
@@ -15,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://bt75dqc0het1a" path="res://scenes/upgrades/upgrade_better_bacteria.tscn" id="10_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://cagmf1j2ietoh" path="res://scenes/upgrades/upgrade_super_bacteria.tscn" id="11_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://6mvb7vrvg6og" path="res://assets/bac_bacteries.svg" id="11_ya4ey"]
+[ext_resource type="Script" uid="uid://drse83ef45k4k" path="res://scripts/VictoryScreen.gd" id="15_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://be8lu6sse7fpw" path="res://scenes/blink_label.tscn" id="16_muem4"]
 
 [node name="main_Node" type="Node" unique_id=767560022]
 
@@ -109,7 +112,7 @@ gamestate = NodePath("../../gameState_Node")
 
 [node name="applyer_Node" type="Node" parent="bacteria_factory/super_bacteria_upgrade" unique_id=1478645006]
 script = ExtResource("6_jkv2x")
-price = 200
+price = 2000
 
 [node name="Usine" type="Sprite2D" parent="bacteria_factory" unique_id=55223594]
 position = Vector2(104, 41)
@@ -124,13 +127,60 @@ texture = ExtResource("11_ya4ey")
 position = Vector2(39, 51.55)
 texture = ExtResource("11_ya4ey")
 
+[node name="victory_Node2D" type="Node2D" parent="." unique_id=1002013173]
+visible = false
+script = ExtResource("15_dp3eg")
+
+[node name="victory_Label" type="Label" parent="victory_Node2D" unique_id=696484945]
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 124.0
+offset_bottom = 30.0
+text = "                                                                                                        
+  oooooo     oooo  ooooo    .oooooo.   ooooooooooooo   .oooooo.    ooooooooo.   oooooo   oooo      .o.  
+   `888.     .8'   `888'   d8P'  `Y8b  8'   888   `8  d8P'  `Y8b   `888   `Y88.  `888.   .8'       888  
+    `888.   .8'     888   888               888      888      888   888   .d88'   `888. .8'        888  
+     `888. .8'      888   888               888      888      888   888ooo88P'     `888.8'         Y8P  
+      `888.8'       888   888               888      888      888   888`88b.        `888'          `8'  
+       `888'        888   `88b    ooo       888      `88b    d88'   888  `88b.       888           .o.  
+        `8'        o888o   `Y8bood8P'      o888o      `Y8bood8P'   o888o  o888o     o888o          Y8P  
+                                                                                                         "
+label_settings = ExtResource("4_jbj1t")
+
+[node name="restart_Label" type="Label" parent="victory_Node2D" unique_id=1565955061]
+offset_left = 23.0
+offset_top = 48.0
+offset_right = 120.0
+offset_bottom = 56.0
+text = "                                                                                                 
+   ____   _____  ____  _____   _     ____  _____    __   ____   ____    _     ____  _____   __   
+  |  _ \\ | ____|/ ___||_   _| / \\   |  _ \\|_   _|  | _| / ___| |  _ \\  / \\   / ___|| ____| |_ |  
+  | |_) ||  _|  \\___ \\  | |  / _ \\  | |_) | | |    | |  \\___ \\ | |_) |/ _ \\ | |    |  _|    | |  
+  |  _ < | |___  ___) | | | / ___ \\ |  _ <  | |    | |   ___) ||  __// ___ \\| |___ | |___   | |  
+  |_| \\_\\|_____||____/  |_|/_/   \\_\\|_| \\_\\ |_|    | |  |____/ |_|  /_/   \\_\\\\____||_____|  | |  
+                                                   |__|                                    |__|  
+                                                                                                 "
+label_settings = ExtResource("4_jbj1t")
+
+[node name="BlinkLabel" parent="victory_Node2D/restart_Label" unique_id=1665782607 instance=ExtResource("16_muem4")]
+
+[node name="Quit_Label" type="Label" parent="victory_Node2D" unique_id=2049975912]
+offset_left = 46.0
+offset_top = 58.0
+offset_right = 96.0
+offset_bottom = 66.0
+text = "                                                
+    ___   _   _  ___  _____    __   _  __  __   
+   / _ \\ | | | ||_ _||_   _|  | _| | |/ / |_ |  
+  | | | || | | | | |   | |    | |  | ' /   | |  
+  | |_| || |_| | | |   | |    | |  | . \\   | |  
+   \\__\\_\\ \\___/ |___|  |_|    | |  |_|\\_\\  | |  
+                              |__|        |__|  
+                                                "
+label_settings = ExtResource("4_jbj1t")
+
 [node name="gameState_Node" type="Node" parent="." unique_id=2142190266 node_paths=PackedStringArray("all_buildings", "camera", "ui_bar")]
 script = ExtResource("2_sugp2")
 all_buildings = [NodePath("../Windmills"), NodePath("../bacteria_factory")]
 camera = NodePath("../Camera2D")
 ui_bar = NodePath("../Camera2D/ui_bar")
-
-[node name="startCooldown_Timer" type="Timer" parent="." unique_id=72031176]
-wait_time = 0.119
-one_shot = true
-autostart = true

@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var bacteria_reduction_improvement: float = 0.1
+@export var bacteria_reduction_improvement: float = 0.4
 @export var selected: bool = false
 @export var gamestate: GameState
 

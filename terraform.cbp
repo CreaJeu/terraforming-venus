@@ -149,6 +149,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="cluige_only/UpgradeApplyer.h" />
+		<Unit filename="cluige_only/VictoryScreen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/VictoryScreen.h" />
 		<Unit filename="cluige_only/blink_label.c">
 			<Option compilerVar="CC" />
 		</Unit>

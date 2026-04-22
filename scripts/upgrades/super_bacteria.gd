@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var acidity_reduction: int = 10
+@export var acidity_reduction: int = 20
 @export var selected: bool = false
 @export var gamestate: GameState
 

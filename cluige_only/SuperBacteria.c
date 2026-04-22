@@ -17,7 +17,7 @@ Script* instantiate_SuperBacteria(const SortedDictionary* parsed_params)
 	found = utils_int_from_parsed(&(new_SuperBacteria->acidity_reduction), parsed_params, "acidity_reduction");
 	if(!found)
 	{
-		new_SuperBacteria->acidity_reduction = 10;//default value from .gd
+		new_SuperBacteria->acidity_reduction = 20;//default value from .gd
 	}
 
 //	found = utils_bool_from_parsed(&(new_SuperBacteria->selected), parsed_params, "selected");

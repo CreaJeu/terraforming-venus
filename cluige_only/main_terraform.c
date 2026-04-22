@@ -19,6 +19,7 @@
 #include "RainParticle.h"
 #include "SuperBacteria.h"
 #include "UpgradeApplyer.h"
+#include "VictoryScreen.h"
 
 
 static void register_all_scripts()
@@ -37,6 +38,7 @@ static void register_all_scripts()
 	register_RainParticleFactory();
 	register_SuperBacteriaFactory();
 	register_UpgradeApplyerFactory();
+	register_VictoryScreenFactory();
 	//...
 }
 

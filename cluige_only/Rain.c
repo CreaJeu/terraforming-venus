@@ -40,7 +40,7 @@ void delete_Rain(Script* this_Script)
 Vector2 get_random_position_in_screen(){
     Vector2 screen_size = iCluige.get_screen_size();
     int rndX = rand() % (int)(screen_size.x) - 70;
-    int rndY = rand() % (int)(screen_size.y - 40) - 10;
+    int rndY = -2;//rand() % (int)(screen_size.y - 40) - 10;
 
     return (Vector2){rndX, rndY};
 }

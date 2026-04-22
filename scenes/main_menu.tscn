@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0ubqa1i8joow" path="res://scripts/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="1_l6cm7"]
-[ext_resource type="PackedScene" path="res://scenes/blink_label.tscn" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://be8lu6sse7fpw" path="res://scenes/blink_label.tscn" id="2_ekxnf"]
 
 [node name="MainMenu" type="Node2D" unique_id=1562402571]
 script = ExtResource("1_bqqt6")
@@ -41,12 +41,14 @@ offset_left = 70.0
 offset_top = 65.0
 offset_right = 120.0
 offset_bottom = 71.0
-text = "  _____ ___     ___  _   _ ___ _____   __ _  ____ 
- |_   _/ _ \\   / _ \\| | | |_ _|_   _| | _| |/ /_ |
-   | || | | | | | | | | | || |  | |   | || ' / | |
-   | || |_| | | |_| | |_| || |  | |   | || . \\ | |
-   |_| \\___/   \\__\\_\\\\___/|___| |_|   | ||_|\\_\\| |
-                                      |__|    |__|"
+text = "                                                
+    ___   _   _  ___  _____    __   _  __  __   
+   / _ \\ | | | ||_ _||_   _|  | _| | |/ / |_ |  
+  | | | || | | | | |   | |    | |  | ' /   | |  
+  | |_| || |_| | | |   | |    | |  | . \\   | |  
+   \\__\\_\\ \\___/ |___|  |_|    | |  |_|\\_\\  | |  
+                              |__|        |__|  
+                                                "
 label_settings = ExtResource("1_l6cm7")
 
 [node name="MenuCamera_Camera2D" type="Camera2D" parent="." unique_id=1356524813]

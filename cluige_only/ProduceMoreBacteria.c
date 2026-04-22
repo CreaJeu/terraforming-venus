@@ -17,7 +17,7 @@ Script* instantiate_ProduceMoreBacteria(const SortedDictionary* parsed_params)
 	found = utils_float_from_parsed(&(new_ProduceMoreBacteria->bacteria_reduction_improvement), parsed_params, "bacteria_reduction_improvement");
 	if(!found)
 	{
-		new_ProduceMoreBacteria->bacteria_reduction_improvement = .1;//default value from .gd
+		new_ProduceMoreBacteria->bacteria_reduction_improvement = .4;//default value from .gd
 	}
 
 //	found = utils_bool_from_parsed(&(new_ProduceMoreBacteria->selected), parsed_params, "selected");

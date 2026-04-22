@@ -39,10 +39,10 @@ void delete_RainParticle(Script* this_Script)
 
 void process_RainParticle(Script* this_Script, float delta)
 {
-	RainParticle* this_RainParticle = (RainParticle*)(this_Script->_sub_class);
+	//RainParticle* this_RainParticle = (RainParticle*)(this_Script->_sub_class);
 	Node2D* this_Node2D = (Node2D*)(this_Script->node->_sub_class);
 
-	iCluige.iNode2D.move_local(this_Node2D, (Vector2){10 * delta, 10 * delta});
+	iCluige.iNode2D.move_local(this_Node2D, (Vector2){1, 1});//20 * delta, 20 * delta});
 
 	Vector2 screen_size = iCluige.get_screen_size();
 	if (

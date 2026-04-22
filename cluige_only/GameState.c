@@ -3,16 +3,20 @@
 #include "OurCamera.h"
 #include "BarreUI.h"
 #include "Building.h"
+#include "VictoryScreen.h"
 
 void process_GameState(Script* this_Script, float delta);
 void ready_GameState(Script* this_Script);
 
 int ok_action;
+int start_action;
 int left_action;
 int right_action;
 int up_action;
 int down_action;
 int exit_action;
+
+bool playing = true;
 
 Script* instantiate_GameState(const SortedDictionary* parsed_params)
 {
@@ -104,10 +108,35 @@ void take_from_energy_storage(GameState* this_GameState, int taken_energy)
     update_energy_stored_label(this_GameState->ui_bar, this_GameState->energy);
 }
 
+void _end_game(GameState* this_GameState)
+{
+	//instantiate main_menu
+	char* menu_path = "scenes/main_menu.tscn";
+	SortedDictionary* path_to_ps = &(iCluige.iPackedScene.dico_path_to_packed);
+	Checked_Variant cv =iCluige.iSortedDictionary.get(path_to_ps, menu_path);
+	CLUIGE_ASSERT(cv.valid, "unknown 'scenes/main_menu.tscn'");
+	PackedScene* ps = (PackedScene*)(cv.v.ptr);
+	Node* menu_node = iCluige.iPackedScene.instantiate(ps);
+
+	iCluige.iNode.add_child(this_GameState->this_Node->parent->parent, menu_node);
+	iCluige.iNode.queue_free(this_GameState->this_Node->parent);
+}
+
+void _on_victory(GameState* this_GameState)
+{
+	playing = false;
+	show_VictoryScreen();
+}
+
 void remove_acidity(GameState* this_GameState, float removed_acidity)
 {
-    this_GameState->toxicity -= removed_acidity;
-    update_acidity_level_label(this_GameState->ui_bar, this_GameState->toxicity);
+	this_GameState->toxicity -= removed_acidity;
+	if(this_GameState->toxicity < 0)
+	{
+		this_GameState->toxicity = 0;
+		_on_victory(this_GameState);
+	}
+	update_acidity_level_label(this_GameState->ui_bar, this_GameState->toxicity);
 }
 
 void set_acidity_change(GameState* this_GameState, float new_acidity_change)
@@ -144,20 +173,29 @@ void set_ui(GameState* this_GameState){
 
 void process_GameState(Script* this_Script, float delta)
 {
-    // Handling time passing
 	GameState* this_GameState = (GameState*)(this_Script->_sub_class);
-	this_GameState->time_passed+=delta;
-	if (this_GameState->time_passed > this_GameState->day_duration){
-        _on_day_timeout(this_GameState);
+
+	// Handling time passing
+	if(playing)
+	{
+		this_GameState->time_passed+=delta;
+		if (this_GameState->time_passed > this_GameState->day_duration){
+			_on_day_timeout(this_GameState);
+		}
 	}
 
 	int selec = this_GameState->selected_building;
 	Deque* bb = &(this_GameState->all_buildings);
 	Building* b = (Building*)iCluige.iDeque.at(bb, selec).ptr;
 	int nbb = iCluige.iDeque.size(bb);
-	if(iCluige.iInput.is_action_just_pressed(ok_action))
+	if(iCluige.iInput.is_action_just_pressed(ok_action) && playing)
 	{
 		applySelectedUpgrade(b);
+	}
+	if(iCluige.iInput.is_action_just_pressed(start_action) && !playing)
+	{
+		//victory screen => restart
+		_end_game(this_GameState);
 	}
 	if(iCluige.iInput.is_action_just_pressed(left_action))
 	{
@@ -195,8 +233,10 @@ void process_GameState(Script* this_Script, float delta)
 
 void ready_GameState(Script* this_Script)
 {
+	playing = true;
 	GameState* this_GameState = (GameState*)(this_Script->_sub_class);
 	Node* this_Node = this_Script->node;
+	this_GameState->this_Node = this_Node;
 	Node* n = iCluige.iNode.get_node(this_Node, "../Windmills");
 	Building* b = (Building*)(n->script->_sub_class);
 	iCluige.iDeque.push_back(&(this_GameState->all_buildings), b);
@@ -211,6 +251,7 @@ void ready_GameState(Script* this_Script)
 	set_ui(this_GameState);
 
 	ok_action = iCluige.iInput.action_id_from_name("ok", true);
+	start_action = iCluige.iInput.action_id_from_name("start", true);
 	left_action = iCluige.iInput.action_id_from_name("left", true);
 	right_action = iCluige.iInput.action_id_from_name("right", true);
 	up_action = iCluige.iInput.action_id_from_name("up", true);

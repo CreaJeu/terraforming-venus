@@ -13,9 +13,11 @@ extends Node
 
 var time_passed: float
 var current_day: int = 1
+var playing: bool = true
 
 func _ready() -> void:
 	$"../Camera2D".make_current()
+	#$"../victory_Node2D".hide()
 	set_ui()
 
 func set_ui():
@@ -47,21 +49,25 @@ func take_to_energy_storage(taken_energy: int):
 func remove_acidity(removed_acidity: float):
 	toxicity -= removed_acidity
 	if toxicity < 0:
-		_end_game()
+		toxicity = 0
+		_on_victory()
 	ui_bar.update_acidity_level_label(toxicity)
 
 func set_acidity_change(new_acidity_change: float):
 	toxicity_reduction = new_acidity_change
 	ui_bar.update_acidity_change_label(toxicity_reduction)
 
+func _on_victory():
+	playing = false
+	$"../victory_Node2D".show()
+
 func _end_game():
 	#get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-	queue_free()
 	var other_path = "res://scenes/main_menu.tscn"
 	var other_packed: PackedScene = load(other_path)
-	var other_scene:Node = other_packed.instantiate()
-	get_node("..").add_child(other_scene)
-	# TODO: end game scene
+	var other_scene: Node = other_packed.instantiate()
+	get_node("../..").add_child(other_scene)
+	$"..".queue_free()
 
 func _on_day_timeout():
 	time_passed = 0
@@ -75,14 +81,16 @@ func display_message(message: String):
 	ui_bar.set_message(message)
 
 func _process(delta: float) -> void:
-	if(!$"../startCooldown_Timer".is_stopped()):
-		return
-	time_passed += delta
-	if time_passed > day_duration:
-		_on_day_timeout()
+	if(playing):
+		time_passed += delta
+		if time_passed > day_duration:
+			_on_day_timeout()
 	
-	if(Input.is_action_just_pressed("ok")):
-		all_buildings[selected_building].applySelectedUpgrade()
+	if(Input.is_action_just_pressed("ok") && playing):
+			all_buildings[selected_building].applySelectedUpgrade()
+	if(Input.is_action_just_pressed("start") && !playing):
+			#victory screen
+			_end_game()
 	if(Input.is_action_just_pressed("left")):
 		selected_building -= 1
 		if(selected_building < 0):

@@ -19,7 +19,7 @@ offset_left = 4.0
 offset_top = 2.0
 offset_right = 42.0
 offset_bottom = 3.0
-text = "   Effect : -10% acidity"
+text = "   Effect : -20% acidity"
 label_settings = ExtResource("2_ob2n2")
 
 [node name="price_Label" type="Label" parent="." unique_id=547317410]
@@ -27,7 +27,7 @@ offset_left = 4.0
 offset_top = 3.0
 offset_right = 22.0
 offset_bottom = 4.0
-text = "   Price : 200 W"
+text = "   Price : 2000 W"
 label_settings = ExtResource("2_ob2n2")
 
 [node name="buy_Label" type="Label" parent="." unique_id=859475095]

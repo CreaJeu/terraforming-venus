@@ -9,8 +9,8 @@ func _ready() -> void:
 	if particle_type == 1:
 		text = "`"
 
-func _process(_delta: float) -> void:
-	position.y += 2
-	position.x += 2
+func _process(delta: float) -> void:
+	position.y += 20 * delta
+	position.x += 20 * delta
 	if position.y > get_viewport().get_visible_rect().size.y - 10:
 		self.queue_free()

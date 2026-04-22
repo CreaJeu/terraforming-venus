@@ -19,7 +19,7 @@ offset_left = 4.0
 offset_top = 2.0
 offset_right = 42.0
 offset_bottom = 3.0
-text = "   Effect : +0.1% acidity reduction"
+text = "   Effect : +0.4% acidity reduction"
 label_settings = ExtResource("2_g3dul")
 
 [node name="price_Label" type="Label" parent="." unique_id=547317410]

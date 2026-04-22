@@ -12,7 +12,7 @@ typedef struct _GameState GameState;
 struct _GameState
 {
 //	Script* _this_Script;
-//	Node2D* _this_Node2D;
+	Node* this_Node;
 
 	float toxicity;
 	float toxicity_reduction;

@@ -64,7 +64,7 @@ void process_MainMenu(Script* this_Script, float delta)
 {
 //	MainMenu* this_MainMenu = (MainMenu*)(this_Script->_sub_class);
     Node* this_Node = this_Script->node;
-	int ok_action = iCluige.iInput.action_id_from_name("ok", true);
+	int ok_action = iCluige.iInput.action_id_from_name("start", true);
 	int exit_action = iCluige.iInput.action_id_from_name("exit", true);
 	if(iCluige.iInput.is_action_just_pressed(ok_action))
 	{
