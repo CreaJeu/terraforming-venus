@@ -57,8 +57,8 @@ void delete_ProduceMoreBacteria(Script* this_Script)
 void ready_ProduceMoreBacteria(Script* this_Script)
 {
 	ProduceMoreBacteria* this_ProduceMoreBacteria = (ProduceMoreBacteria*)(this_Script->_sub_class);
-	Node* root = iCluige.public_root_2D;
-	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node");
+	Node* root = iCluige.public_root;
+	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node", true);
 	this_ProduceMoreBacteria->gamestate = (GameState*)gamestate_Node->script->_sub_class;
 }
 

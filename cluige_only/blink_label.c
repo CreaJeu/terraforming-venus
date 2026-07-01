@@ -65,6 +65,6 @@ void ready_BlinkLabel(Script* this_Script){
     BlinkLabel* this_BlinkLabel = (BlinkLabel*)(this_Script->_sub_class);
     Node* this_Node = this_Script->node;
 
-    this_BlinkLabel->label = (Node2D*)iCluige.iNode.get_node(this_Node, "..")->_sub_class;
+    this_BlinkLabel->label = (Node2D*)iCluige.iNode.get_node(this_Node, "..", true)->_sub_class;
 
 }

@@ -52,7 +52,7 @@ void ready_UpgradeApplyer(Script* this_Script){
 	UpgradeApplyer* this_UpgradeApplyer = (UpgradeApplyer*)(this_Script->_sub_class);
 	Node* this_Node = this_Script->node;
 
-	Node* gsn = iCluige.iNode.get_node(this_Node, "../../../gameState_Node");
+	Node* gsn = iCluige.iNode.get_node(this_Node, "../../../gameState_Node", true);
 	this_UpgradeApplyer->gs = (GameState*)gsn->script->_sub_class;
 }
 
@@ -67,7 +67,7 @@ bool apply_upgrade(UpgradeApplyer* this_UpgradeApplyer)
 		return false;
 	}
 	add_to_energy_storage(this_UpgradeApplyer->gs, -this_UpgradeApplyer->price);
-	Node* upgr = iCluige.iNode.get_node(this_Node, "..");
+	Node* upgr = iCluige.iNode.get_node(this_Node, "..", true);
 	iCluige.iNode.queue_free(upgr);
 	return true;
 }

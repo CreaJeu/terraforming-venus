@@ -57,8 +57,8 @@ void delete_BetterWindmills(Script* this_Script)
 void ready_BetterWindmills(Script* this_Script)
 {
 	BetterWindmills* this_BetterWindmills = (BetterWindmills*)(this_Script->_sub_class);
-	Node* root = iCluige.public_root_2D;
-	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node");
+	Node* root = iCluige.public_root;
+	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node", true);
 	this_BetterWindmills->gamestate = (GameState*)gamestate_Node->script->_sub_class;
 }
 

@@ -237,15 +237,15 @@ void ready_GameState(Script* this_Script)
 	GameState* this_GameState = (GameState*)(this_Script->_sub_class);
 	Node* this_Node = this_Script->node;
 	this_GameState->this_Node = this_Node;
-	Node* n = iCluige.iNode.get_node(this_Node, "../Windmills");
+	Node* n = iCluige.iNode.get_node(this_Node, "../Windmills", true);
 	Building* b = (Building*)(n->script->_sub_class);
 	iCluige.iDeque.push_back(&(this_GameState->all_buildings), b);
-	n = iCluige.iNode.get_node(this_Node, "../bacteria_factory");
+	n = iCluige.iNode.get_node(this_Node, "../bacteria_factory", true);
 	b = (Building*)(n->script->_sub_class);
 	iCluige.iDeque.push_back(&(this_GameState->all_buildings), b);
-	n = iCluige.iNode.get_node(this_Node, "../Camera2D");
+	n = iCluige.iNode.get_node(this_Node, "../Camera2D", true);
 	this_GameState->camera = (OurCamera*)(n->script->_sub_class);
-	n = iCluige.iNode.get_node(this_Node, "../Camera2D/ui_bar");
+	n = iCluige.iNode.get_node(this_Node, "../Camera2D/ui_bar", true);
 	this_GameState->ui_bar = (BarreUI*)(n->script->_sub_class);
 
 	set_ui(this_GameState);

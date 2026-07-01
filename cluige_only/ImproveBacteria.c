@@ -57,8 +57,8 @@ void delete_ImproveBacteria(Script* this_Script)
 void ready_ImproveBacteria(Script* this_Script)
 {
 	ImproveBacteria* this_ImproveBacteria = (ImproveBacteria*)(this_Script->_sub_class);
-	Node* root = iCluige.public_root_2D;
-	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node");
+	Node* root = iCluige.public_root;
+	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node", true);
 	this_ImproveBacteria->gamestate = (GameState*)gamestate_Node->script->_sub_class;
 }
 

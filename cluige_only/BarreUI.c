@@ -40,31 +40,31 @@ void ready_BarreUI(Script* this_Script)
 	BarreUI* this_BarreUI = (BarreUI*)(this_Script->_sub_class);
     Node* this_Node = (Node*)(this_Script->node);
 
-	Node* n = iCluige.iNode.get_node(this_Node, "TextLine1/BuildingSelect");
+	Node* n = iCluige.iNode.get_node(this_Node, "TextLine1/BuildingSelect", true);
 	Node2D* n2D = (Node2D*)n->_sub_class;
 	this_BarreUI->BuildingSelect = (SpriteText*)n2D->_sub_class;
 
-    n = iCluige.iNode.get_node(this_Node, "TextLine1/EnergyStored_Label");
+    n = iCluige.iNode.get_node(this_Node, "TextLine1/EnergyStored_Label", true);
     n2D = (Node2D*)n->_sub_class;
 	this_BarreUI->EnergyStored = (SpriteText*)n2D->_sub_class;
 
-    n = iCluige.iNode.get_node(this_Node, "TextLine1/EnergyIncome_Label");
+    n = iCluige.iNode.get_node(this_Node, "TextLine1/EnergyIncome_Label", true);
     n2D = (Node2D*)n->_sub_class;
 	this_BarreUI->EnergyIncome = (SpriteText*)n2D->_sub_class;
 
-    n = iCluige.iNode.get_node(this_Node, "TextLine1/AcidityLevel_Label");
+    n = iCluige.iNode.get_node(this_Node, "TextLine1/AcidityLevel_Label", true);
     n2D = (Node2D*)n->_sub_class;
 	this_BarreUI->AcidityLevel = (SpriteText*)n2D->_sub_class;
 
-    n = iCluige.iNode.get_node(this_Node, "TextLine1/AcidityChange_Label");
+    n = iCluige.iNode.get_node(this_Node, "TextLine1/AcidityChange_Label", true);
     n2D = (Node2D*)n->_sub_class;
 	this_BarreUI->AcidityChange = (SpriteText*)n2D->_sub_class;
 
-    n = iCluige.iNode.get_node(this_Node, "TextLine1/Date_Label");
+    n = iCluige.iNode.get_node(this_Node, "TextLine1/Date_Label", true);
     n2D = (Node2D*)n->_sub_class;
 	this_BarreUI->Date_Label = (SpriteText*)n2D->_sub_class;
 
-    n = iCluige.iNode.get_node(this_Node, "TextLine2/Text");
+    n = iCluige.iNode.get_node(this_Node, "TextLine2/Text", true);
     n2D = (Node2D*)n->_sub_class;
 	this_BarreUI->Message_Label = (SpriteText*)n2D->_sub_class;
 }

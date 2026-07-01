@@ -57,8 +57,8 @@ void delete_SuperBacteria(Script* this_Script)
 void ready_SuperBacteria(Script* this_Script)
 {
 	SuperBacteria* this_SuperBacteria = (SuperBacteria*)(this_Script->_sub_class);
-	Node* root = iCluige.public_root_2D;
-	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node");
+	Node* root = iCluige.public_root;
+	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node", true);
 	this_SuperBacteria->gamestate = (GameState*)gamestate_Node->script->_sub_class;
 }
 

@@ -41,7 +41,7 @@ void delete_MainMenu(Script* this_Script)
 void load_main_scene(Node* this_node){
     char* main_scene_path = "scenes/main.tscn";
     Node* main_scene_node = instantiate_scene(main_scene_path);
-    Node* root = iCluige.iNode.get_node(this_node, "..");
+    Node* root = iCluige.iNode.get_node(this_node, "..", true);
     iCluige.iNode.add_child(root, main_scene_node);
     iCluige.iNode.queue_free(this_node);
 }

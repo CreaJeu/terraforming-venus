@@ -80,15 +80,15 @@ void select_upgrade(Building* this_Building, int i)
 //	Node* up_n = iCluige.iNode.get_child(this_Node, i+2);
 	this_Building->selected_upgrade_index = i;
 	Node* up_n = (Node*)iCluige.iDeque.at(&(this_Building->upgrades), i).ptr;
-	Node* label_n = iCluige.iNode.get_node(up_n, "pointer_Label");
+	Node* label_n = iCluige.iNode.get_node(up_n, "pointer_Label", true);
 	Node2D* label_n2D = (Node2D*)label_n->_sub_class;
 	label_n2D->visible = true;
 
-	label_n = iCluige.iNode.get_node(up_n, "buy_Label");
+	label_n = iCluige.iNode.get_node(up_n, "buy_Label", true);
 	label_n2D = (Node2D*)label_n->_sub_class;
 	label_n2D->visible = true;
 
-	Node* blink = iCluige.iNode.get_node(up_n, "pointer_Label/BlinkLabel");
+	Node* blink = iCluige.iNode.get_node(up_n, "pointer_Label/BlinkLabel", true);
 	blink->script->process = process_BlinkLabel;
 }
 
@@ -96,15 +96,15 @@ void deselect_upgrade(Building* this_Building, int i)
 {
 //	Node* up_n = iCluige.iNode.get_child(this_Node, i+2);
 	Node* up_n = (Node*)iCluige.iDeque.at(&(this_Building->upgrades), i).ptr;
-	Node* label_n = iCluige.iNode.get_node(up_n, "pointer_Label");
+	Node* label_n = iCluige.iNode.get_node(up_n, "pointer_Label", true);
 	Node2D* label_n2D = (Node2D*)label_n->_sub_class;
 	label_n2D->visible = false;
 
-	label_n = iCluige.iNode.get_node(up_n, "buy_Label");
+	label_n = iCluige.iNode.get_node(up_n, "buy_Label", true);
 	label_n2D = (Node2D*)label_n->_sub_class;
 	label_n2D->visible = false;
 
-	Node* blink = iCluige.iNode.get_node(up_n, "pointer_Label/BlinkLabel");
+	Node* blink = iCluige.iNode.get_node(up_n, "pointer_Label/BlinkLabel", true);
 	blink->script->process = NULL;
 }
 
@@ -113,7 +113,7 @@ void ready_Building(Script* this_Script)
 	Building* this_Building = (Building*)(this_Script->_sub_class);
 	Node* this_Node = this_Script->node;
 	this_Building->_this_Node2D = (Node2D*)this_Node->_sub_class;
-	Node* tn = iCluige.iNode.get_node(this_Node, "title_Label");
+	Node* tn = iCluige.iNode.get_node(this_Node, "title_Label", true);
 	Node2D* tn2d = (Node2D*)tn->_sub_class;
 	SpriteText* ts = (SpriteText*)tn2d->_sub_class;
 	char str[500];
@@ -124,7 +124,7 @@ void ready_Building(Script* this_Script)
 	{
 		char* upgr_path_i = (char*)iCluige.iDeque.at(
 				&(this_Building->upgrades_paths), i).ptr;
-		tn = iCluige.iNode.get_node(this_Node, upgr_path_i);
+		tn = iCluige.iNode.get_node(this_Node, upgr_path_i, true);
 		iCluige.iDeque.push_back(&(this_Building->upgrades), tn);
 		free(upgr_path_i);
 	}
@@ -167,7 +167,7 @@ void applySelectedUpgrade(Building* this_Building)
 	}
 	int selec = this_Building->selected_upgrade_index;
 	Node* upgr_node = (Node*)iCluige.iDeque.at(ups, selec).ptr;
-	Node* applyer_node = iCluige.iNode.get_node(upgr_node, "applyer_Node");
+	Node* applyer_node = iCluige.iNode.get_node(upgr_node, "applyer_Node", true);
 	UpgradeApplyer* applyer = (UpgradeApplyer*)applyer_node->script->_sub_class;
 	if(!apply_upgrade(applyer))
 	{

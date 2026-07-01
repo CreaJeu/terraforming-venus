@@ -54,7 +54,7 @@ void ready_OurCamera(Script* this_Script)
 	Node* this_Node = this_Script->node;
 	OurCamera* this_OurCamera = (OurCamera*)(this_Script->_sub_class);
 
-	Node* n = iCluige.iNode.get_node(this_Node, "../gameState_Node");
+	Node* n = iCluige.iNode.get_node(this_Node, "../gameState_Node", true);
 	this_OurCamera->gs = (GameState*)n->script->_sub_class;
 
 //	make_current()

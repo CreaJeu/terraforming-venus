@@ -47,13 +47,13 @@ void delete_VictoryScreen(Script* this_Script)
 //because visibility inheritance not yet implemented in cluige
 void set_visible_VictoryScreen(bool visible)
 {
-	Node* n = iCluige.iNode.get_node(this_script->node, "victory_Label");
+	Node* n = iCluige.iNode.get_node(this_script->node, "victory_Label", true);
 	Node2D* n2D = (Node2D*)n->_sub_class;
 	n2D->visible = visible;
-	n = iCluige.iNode.get_node(this_script->node, "restart_Label");
+	n = iCluige.iNode.get_node(this_script->node, "restart_Label", true);
 	n2D = (Node2D*)n->_sub_class;
 	n2D->visible = visible;
-	n = iCluige.iNode.get_node(this_script->node, "Quit_Label");
+	n = iCluige.iNode.get_node(this_script->node, "Quit_Label", true);
 	n2D = (Node2D*)n->_sub_class;
 	n2D->visible = visible;
 }
@@ -70,7 +70,7 @@ void ready_VictoryScreen(Script* this_Script)
 {
 	this_Node2D = (Node2D*)this_Script->node->_sub_class;
 	this_script = this_Script;
-	Node* blk = iCluige.iNode.get_node(this_Script->node, "restart_Label/BlinkLabel");
+	Node* blk = iCluige.iNode.get_node(this_Script->node, "restart_Label/BlinkLabel", true);
 	restart_blink_script = blk->script;
 	restart_blink_script->process = NULL;
 	set_visible_VictoryScreen(false);
