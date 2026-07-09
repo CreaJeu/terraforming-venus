@@ -64,7 +64,7 @@ void process_Rain(Script* this_Script, float delta)
 {
     Node* rain_particle = instantiate_rain_particle();
     particle_count++;
-    sprintf(rain_particle->name, "%d", particle_count);
+//    sprintf(rain_particle->name, "%d", particle_count);
     Node2D* rain_particle_Node2D = rain_particle->_sub_class;
     Vector2 random_position = get_random_position_in_screen();
     iCluige.iNode2D.set_local_position(rain_particle_Node2D, random_position);

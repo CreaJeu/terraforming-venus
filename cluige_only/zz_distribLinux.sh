@@ -8,11 +8,13 @@ dir="../releases/terraformingVenus_linux"
 # Validate mode (exact match)
 if [ "$mode" != "Debug" ] && [ "$mode" != "Release" ]; then
   echo "bug in script" >&2
+  exit 2
 fi
 
 # Validate directory exists and is a directory
 if [ ! -d "$dir" ]; then
   echo "bug in script" >&2
+  exit 2
 fi
 
 
