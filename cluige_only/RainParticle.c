@@ -47,8 +47,8 @@ void process_RainParticle(Script* this_Script, float delta)
 	Vector2 screen_size = iCluige.get_screen_size();
 	if (
         this_Node2D->position.y > screen_size.y - 10
-        ||
-        this_Node2D->position.x > screen_size.x - 70
+//        ||
+//        this_Node2D->position.x > screen_size.x - 70
 	)
 	{
         iCluige.iNode.queue_free(this_Script->node);

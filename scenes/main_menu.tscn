@@ -50,6 +50,7 @@ text = "
                               |__|        |__|  
                                                 "
 label_settings = ExtResource("1_l6cm7")
+metadata/transparent_char = "$"
 
 [node name="MenuCamera_Camera2D" type="Camera2D" parent="." unique_id=1356524813]
 anchor_mode = 0
