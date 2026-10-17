@@ -8,7 +8,6 @@
 [ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="4_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://uuimb4h1kpls" path="res://scenes/building.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dceryyv6hwq4t" path="res://scenes/upgrades/upgrade_better_windmills.tscn" id="4_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://bt4l0txw36iug" path="res://assets/usine.svg" id="4_tbgi4"]
 [ext_resource type="Script" uid="uid://r4s2py4tgcmh" path="res://scripts/landscape.gd" id="5_0ld40"]
 [ext_resource type="Script" uid="uid://tt4imcuxn1kh" path="res://scripts/OurCamera.gd" id="5_o6xl0"]
 [ext_resource type="Script" uid="uid://ceei3rsw4qpjx" path="res://scripts/upgrades/upgrade_applyer.gd" id="6_jkv2x"]
@@ -16,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://cyjcgnixmq7si" path="res://scenes/upgrades/upgrade_more_bacteria.tscn" id="9_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://bt75dqc0het1a" path="res://scenes/upgrades/upgrade_better_bacteria.tscn" id="10_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://cagmf1j2ietoh" path="res://scenes/upgrades/upgrade_super_bacteria.tscn" id="11_jbj1t"]
-[ext_resource type="Texture2D" uid="uid://6mvb7vrvg6og" path="res://assets/bac_bacteries.svg" id="11_ya4ey"]
 [ext_resource type="Script" uid="uid://drse83ef45k4k" path="res://scripts/VictoryScreen.gd" id="15_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://be8lu6sse7fpw" path="res://scenes/blink_label.tscn" id="16_muem4"]
 
@@ -171,18 +169,153 @@ gamestate = NodePath("../../gameState_Node")
 script = ExtResource("6_jkv2x")
 price = 2000
 
-[node name="Usine" type="Sprite2D" parent="bacteria_factory" unique_id=55223594]
-position = Vector2(104, 41)
-texture = ExtResource("4_tbgi4")
+[node name="BacBacteriesC" type="Label" parent="bacteria_factory" unique_id=377822630]
+visible = false
+offset_left = 2.0
+offset_top = 43.0
+offset_right = 22.0
+offset_bottom = 53.0
+text = "  ==============
+==..............==
+===............===
+===============::= 
+====------:::::::=
+====------:::::::=
+====------:::::::=
+====------::::::==
+   ============:"
+label_settings = ExtResource("4_jbj1t")
 
-[node name="BacBacteries" type="Sprite2D" parent="bacteria_factory" unique_id=479081016]
-position = Vector2(64, 36.55)
-scale = Vector2(0.825, 0.825)
-texture = ExtResource("11_ya4ey")
+[node name="BacBacteriesB" type="Label" parent="bacteria_factory" unique_id=837520203]
+visible = false
+offset_left = 21.0
+offset_top = 44.0
+offset_right = 48.0
+offset_bottom = 58.0
+text = "     ==============
+ ====..............====
+==....................==
+====.................===
+=====================:==
+=====---------::::::::==
+=====--------:::::::::==
+======-------:::::::::==
+=====---------::::::::==
+=====--------:::::::::==
+======-------:::::::::==
+ :====--------::::=====
+     =============="
+label_settings = ExtResource("4_jbj1t")
 
-[node name="BacBacteries2" type="Sprite2D" parent="bacteria_factory" unique_id=1134593758]
-position = Vector2(39, 51.55)
-texture = ExtResource("11_ya4ey")
+[node name="BacBacteriesA" type="Label" parent="bacteria_factory" unique_id=725593296]
+offset_left = 47.0
+offset_top = 44.0
+offset_right = 82.0
+offset_bottom = 64.0
+text = "       ===================
+  =====...................=====
+===...........................===
+==.............................==
+===...........................===
+======.....................======
+===========================::::==
+===========-----------:::::::::==
+==========----------:-:::::::::==
+==========----------:-:::::::::==
+===========---------:-:::::::::==
+==========----------:-:::::::::==
+==========----------:-:::::::::==
+===========---------:-:::::::::==
+==========----------:-:::::::::==
+ =========----------:-::::::::==
+   ========---------:-:::-====
+       -=================-"
+label_settings = ExtResource("4_jbj1t")
+
+[node name="BacBacteriesAfall" type="Label" parent="bacteria_factory" unique_id=696137956]
+visible = false
+offset_left = 37.0
+offset_top = 45.0
+offset_right = 81.0
+offset_bottom = 65.0
+text = "               ========================
+             =========---------------====
+            ===....====::::::::::::::::===
+            ===.....===:::::::::::::::::===
+           ===.......===::::::::::::::::===
+           ===.......===:::::::::::::::::===
+           ===........==-::::::::::::::::===
+           ==.........===:--:--:--:--:--:===
+          :==.........===----------------===
+           ==.........===----------------===
+           ==-........===----------------===
+           ===........==-----------------===
+           ===.......===-----------------==:
+           ===.......===----------------===
+            ==============================-
+           :==============================
+ ===-===================================:
+===========:    ======================"
+label_settings = ExtResource("4_jbj1t")
+
+[node name="UsineA" type="Label" parent="bacteria_factory" unique_id=1589678906]
+offset_left = 82.0
+offset_top = 27.0
+offset_right = 111.0
+offset_bottom = 53.0
+text = "                 ===
+                 ===
+                 ===
+                 ===
+                 ===
+                 =--=
+                 =--=
+                 =--=
+                 =--=
+                 =--=
+                 =---=
+                 =---=
+       =      =  =---=
+      ==     ==  =---=
+     =-=   -=-=  =---=
+   ==--=  ==--=  =---=
+  =----= =----=  =---=
+-=================---===
+=----------------------=
+=----------------------=
+=----------------------=
+=------=======---------=
+=------=======---------=
+=------=======---------=
+=------=======---------=
+========================"
+label_settings = ExtResource("4_jbj1t")
+
+[node name="UsineB" type="Label" parent="bacteria_factory" unique_id=1848980616]
+visible = false
+offset_left = 105.0
+offset_top = 35.0
+offset_right = 141.0
+offset_bottom = 55.0
+text = "          -          -         -
+         ==        ===        ==
+       ==-=      ==-==      =--=
+     ==---=    :=---==    ==---=
+   ==-----=   =-----==  ==-----=
+ ==-------= =-------====-------=
+=------------------------------=
+=------------------------------=
+=------------------------------=
+=----=====---=====---=====-----=
+=------------------------------=
+=------------------------------=
+=------------------------------=
+=------------------------------=
+=------------------------------=
+=------------------------------=
+=------------------------------=
+================================"
+label_settings = ExtResource("4_jbj1t")
 
 [node name="victory_Node2D" type="Node2D" parent="." unique_id=1002013173]
 visible = false
