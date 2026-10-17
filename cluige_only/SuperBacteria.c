@@ -60,6 +60,10 @@ void ready_SuperBacteria(Script* this_Script)
 	Node* root = iCluige.public_root;
 	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node", true);
 	this_SuperBacteria->gamestate = (GameState*)gamestate_Node->script->_sub_class;
+	Node* bac_art_Node = iCluige.iNode.get_node(this_Script->node, "../BacBacteriesA", true);
+	this_SuperBacteria->old_bac_art = iCluige.iNode2D.cast_from_Node(bac_art_Node);
+	bac_art_Node = iCluige.iNode.get_node(this_Script->node, "../BacBacteriesAfall", true);
+	this_SuperBacteria->new_bac_art = iCluige.iNode2D.cast_from_Node(bac_art_Node);
 }
 
 //bool apply_SuperBacteria(SuperBacteria* this_SuperBacteria, GameState* gamestate)
@@ -67,6 +71,8 @@ static void exit_tree(Script* this_Script)
 {
 	SuperBacteria* this_SuperBacteria = (SuperBacteria*)(this_Script->_sub_class);
 	GameState* gs = this_SuperBacteria->gamestate;
+	iCluige.iNode2D.hide(this_SuperBacteria->old_bac_art);
+	iCluige.iNode2D.show(this_SuperBacteria->new_bac_art);
     remove_acidity(gs, this_SuperBacteria->acidity_reduction);
     set_message(gs->ui_bar, "Our scientists cultivated a gigantic bacteria to help cleanse the rain. It broke the containment and ate a ton of sulfuric acid before dying.");
 }

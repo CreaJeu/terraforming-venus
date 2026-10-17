@@ -16,6 +16,8 @@ struct _ImproveBacteria
 	bool selected;
 	GameState* gamestate;
 
+	Node2D* extra_factory_art;
+
 	//virtual methods - private copy of mother class pointers
 	void (*_delete_super)(Script*);
 };

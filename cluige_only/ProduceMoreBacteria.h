@@ -15,6 +15,9 @@ struct _ProduceMoreBacteria
 	float bacteria_reduction_improvement;
 	bool selected;
 	GameState* gamestate;
+	char* extra_bac_art_path;
+
+	Node2D* extra_bac_art;
 
 	//virtual methods - private copy of mother class pointers
 	void (*_delete_super)(Script*);

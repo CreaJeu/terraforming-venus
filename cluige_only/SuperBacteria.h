@@ -16,6 +16,9 @@ struct _SuperBacteria
 	bool selected;
 	GameState* gamestate;
 
+	Node2D* old_bac_art;
+	Node2D* new_bac_art;
+
 	//virtual methods - private copy of mother class pointers
 	void (*_delete_super)(Script*);
 };

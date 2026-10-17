@@ -60,6 +60,8 @@ void ready_ImproveBacteria(Script* this_Script)
 	Node* root = iCluige.public_root;
 	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node", true);
 	this_ImproveBacteria->gamestate = (GameState*)gamestate_Node->script->_sub_class;
+	Node* extra_factory_art_Node = iCluige.iNode.get_node(this_Script->node, "../UsineB", true);
+	this_ImproveBacteria->extra_factory_art = iCluige.iNode2D.cast_from_Node(extra_factory_art_Node);
 }
 
 //bool apply_ImproveBacteria(ImproveBacteria* this_ImproveBacteria, GameState* gamestate)
@@ -67,6 +69,7 @@ static void exit_tree(Script* this_Script)
 {
 	ImproveBacteria* this_ImproveBacteria = (ImproveBacteria*)(this_Script->_sub_class);
 	GameState* gs = this_ImproveBacteria->gamestate;
+	iCluige.iNode2D.show(this_ImproveBacteria->extra_factory_art);
     set_acidity_change(gs, gs->toxicity_reduction * this_ImproveBacteria->acidity_reduction_modifier);
     set_message(gs->ui_bar, "This energy actually went into a lot of research to improve bacteria's genetics. What did you think we would do with it?");
 }

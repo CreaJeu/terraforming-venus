@@ -186,6 +186,7 @@ upgrades_paths = Array[String](["more_bacteria_upgrade", "more_bacteria_upgrade2
 [node name="more_bacteria_upgrade" parent="bacteria_factory" unique_id=1167395263 node_paths=PackedStringArray("gamestate") instance=ExtResource("9_a8y0u")]
 position = Vector2(142, 11)
 gamestate = NodePath("../../gameState_Node")
+extra_bac_art_path = "../BacBacteriesB"
 
 [node name="applyer_Node" type="Node" parent="bacteria_factory/more_bacteria_upgrade" unique_id=225804384]
 script = ExtResource("6_jkv2x")
@@ -194,6 +195,7 @@ price = 150
 [node name="more_bacteria_upgrade2" parent="bacteria_factory" unique_id=1326053446 node_paths=PackedStringArray("gamestate") instance=ExtResource("9_a8y0u")]
 position = Vector2(142, 24)
 gamestate = NodePath("../../gameState_Node")
+extra_bac_art_path = "../BacBacteriesC"
 
 [node name="applyer_Node" type="Node" parent="bacteria_factory/more_bacteria_upgrade2" unique_id=693022955]
 script = ExtResource("6_jkv2x")

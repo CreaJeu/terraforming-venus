@@ -60,6 +60,8 @@ void ready_BetterWindmills(Script* this_Script)
 	Node* root = iCluige.public_root;
 	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node", true);
 	this_BetterWindmills->gamestate = (GameState*)gamestate_Node->script->_sub_class;
+	Node* extra_factory_art_Node = iCluige.iNode.get_node(this_Script->node, "../TransformateurB", true);
+	this_BetterWindmills->extra_factory_art = iCluige.iNode2D.cast_from_Node(extra_factory_art_Node);
 }
 
 //bool apply_BetterWindmills(BetterWindmills* this_BetterWindmills, GameState* gamestate)
@@ -67,6 +69,7 @@ static void exit_tree(Script* this_Script)
 {
 	BetterWindmills* this_BetterWindmills = (BetterWindmills*)(this_Script->_sub_class);
 	GameState* gs = this_BetterWindmills->gamestate;
+	iCluige.iNode2D.show(this_BetterWindmills->extra_factory_art);
     set_energy_income(gs, (int)(gs->energy_income * this_BetterWindmills->energy_multiplier));
     set_message(gs->ui_bar, "The windmills now have a motor making them spin extra fast to produce more energy");
 }

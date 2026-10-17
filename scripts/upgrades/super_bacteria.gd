@@ -3,16 +3,22 @@ extends Node2D
 @export var acidity_reduction: int = 20
 @export var selected: bool = false
 @export var gamestate: GameState
+var old_bac_art: Label
+var new_bac_art: Label
 
 func _ready() -> void:
 	if selected:
 		select()
 	else:
 		deselect()
+	old_bac_art = $"../BacBacteriesA"
+	new_bac_art = $"../BacBacteriesAfall"
 
 func _exit_tree() -> void:
 	if(gamestate == null):
 		return
+	old_bac_art.hide()
+	new_bac_art.show()
 	gamestate.remove_acidity(acidity_reduction)
 	gamestate.display_message("Our scientists cultivated a gigantic bacteria to help cleanse the rain. It broke the containment and ate a ton of sulfuric acid before dying.")
 

@@ -117,6 +117,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="cluige_only/ImproveBacteria.h" />
+		<Unit filename="cluige_only/Landscape.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/Landscape.h" />
 		<Unit filename="cluige_only/MainMenu.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -19,6 +19,9 @@ Script* instantiate_ProduceMoreBacteria(const SortedDictionary* parsed_params)
 	{
 		new_ProduceMoreBacteria->bacteria_reduction_improvement = .4;//default value from .gd
 	}
+	found = utils_str_from_parsed(&(new_ProduceMoreBacteria->extra_bac_art_path),
+				parsed_params, "extra_bac_art_path");
+	CLUIGE_ASSERT(found, "instantiate_ProduceMoreBacteria(): missing 'extra_bac_art_path' field");
 
 //	found = utils_bool_from_parsed(&(new_ProduceMoreBacteria->selected), parsed_params, "selected");
 //	if(!found)
@@ -49,6 +52,7 @@ void delete_ProduceMoreBacteria(Script* this_Script)
 			(ProduceMoreBacteria*)(this_Script->_sub_class);
 	//tmp memorize function pointer before calling free(this)
 	void (*delete_super)(Script*) = this_ProduceMoreBacteria->_delete_super;
+	free(this_ProduceMoreBacteria->extra_bac_art_path);
 	free(this_ProduceMoreBacteria);
 	this_Script->_sub_class = NULL;
 	delete_super(this_Script);
@@ -60,6 +64,8 @@ void ready_ProduceMoreBacteria(Script* this_Script)
 	Node* root = iCluige.public_root;
 	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node", true);
 	this_ProduceMoreBacteria->gamestate = (GameState*)gamestate_Node->script->_sub_class;
+	Node* bac_art_Node = iCluige.iNode.get_node(this_Script->node, this_ProduceMoreBacteria->extra_bac_art_path, true);
+	this_ProduceMoreBacteria->extra_bac_art = iCluige.iNode2D.cast_from_Node(bac_art_Node);
 }
 
 //bool apply_ProduceMoreBacteria(ProduceMoreBacteria* this_ProduceMoreBacteria, GameState* gamestate)
@@ -67,6 +73,7 @@ static void exit_tree(Script* this_Script)
 {
 	ProduceMoreBacteria* this_ProduceMoreBacteria = (ProduceMoreBacteria*)(this_Script->_sub_class);
 	GameState* gs = this_ProduceMoreBacteria->gamestate;
+	iCluige.iNode2D.show(this_ProduceMoreBacteria->extra_bac_art);
     set_acidity_change(gs, gs->toxicity_reduction + this_ProduceMoreBacteria->bacteria_reduction_improvement);
     set_message(gs->ui_bar, "Shoking bacteria with a lot of electricity surprisingly makes more of them. That was definetly why we tried that.");
 }

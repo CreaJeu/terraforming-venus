@@ -3,8 +3,10 @@ extends Node2D
 @export var acidity_reduction_modifier: int = 2
 @export var selected: bool = false
 @export var gamestate: GameState
+var extra_factory_art: Label
 
 func _ready() -> void:
+	extra_factory_art = $"../UsineB"
 	if selected:
 		select()
 	else:
@@ -13,6 +15,7 @@ func _ready() -> void:
 func _exit_tree() -> void:
 	if(gamestate == null):
 		return
+	extra_factory_art.show()
 	gamestate.set_acidity_change(gamestate.toxicity_reduction * acidity_reduction_modifier)
 	gamestate.display_message("This energy actually went into a lot of research to improve bacteria's genetics. What did you think we would do with it?")
 
