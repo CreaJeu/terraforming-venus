@@ -4,7 +4,8 @@ extends Label
 
 #@export var building_first_Node2D: Node2D
 #@export var building_last_Node2D: Node2D
-@export var camera_Node2D: Node2D
+#@export 
+var camera_Node2D: Node2D
 
 var building_x_dist: float
 var parallax_max_x: float

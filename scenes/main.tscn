@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://uuimb4h1kpls" path="res://scenes/building.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dceryyv6hwq4t" path="res://scenes/upgrades/upgrade_better_windmills.tscn" id="4_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bt4l0txw36iug" path="res://assets/usine.svg" id="4_tbgi4"]
+[ext_resource type="Script" uid="uid://r4s2py4tgcmh" path="res://scripts/landscape.gd" id="5_0ld40"]
 [ext_resource type="Script" uid="uid://tt4imcuxn1kh" path="res://scripts/OurCamera.gd" id="5_o6xl0"]
 [ext_resource type="Script" uid="uid://ceei3rsw4qpjx" path="res://scripts/upgrades/upgrade_applyer.gd" id="6_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://7ma0qjwnwmwr" path="res://assets/transformateur.svg" id="8_85g3d"]
@@ -22,7 +23,7 @@
 [node name="main_Node" type="Node" unique_id=767560022]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1012836297]
-position = Vector2(141, 0)
+position = Vector2(102, -11)
 anchor_mode = 0
 script = ExtResource("5_o6xl0")
 
@@ -85,6 +86,7 @@ text = "                                         ...        ...                 
                                                                                                .                                                                                                                                                                                                            
                                                                                                       ..                                                                                                                                                                                                    "
 label_settings = ExtResource("4_jbj1t")
+script = ExtResource("5_0ld40")
 
 [node name="Windmills" parent="." unique_id=909114598 instance=ExtResource("4_jyhfs")]
 title = "Windmill Fields"
@@ -133,7 +135,7 @@ scale = Vector2(0.7352941, 0.8230769)
 texture = ExtResource("3_jyhfs")
 
 [node name="bacteria_factory" parent="." unique_id=1136961121 instance=ExtResource("4_jyhfs")]
-position = Vector2(318, 0)
+position = Vector2(240, 0)
 title = "Bacteria Factory"
 upgrades_paths = Array[String](["more_bacteria_upgrade", "more_bacteria_upgrade2", "better_bacteria_upgrade", "super_bacteria_upgrade"])
 
