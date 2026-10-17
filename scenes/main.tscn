@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://r4s2py4tgcmh" path="res://scripts/landscape.gd" id="5_0ld40"]
 [ext_resource type="Script" uid="uid://tt4imcuxn1kh" path="res://scripts/OurCamera.gd" id="5_o6xl0"]
 [ext_resource type="Script" uid="uid://ceei3rsw4qpjx" path="res://scripts/upgrades/upgrade_applyer.gd" id="6_jkv2x"]
-[ext_resource type="Texture2D" uid="uid://7ma0qjwnwmwr" path="res://assets/transformateur.svg" id="8_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cyjcgnixmq7si" path="res://scenes/upgrades/upgrade_more_bacteria.tscn" id="9_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://bt75dqc0het1a" path="res://scenes/upgrades/upgrade_better_bacteria.tscn" id="10_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://cagmf1j2ietoh" path="res://scenes/upgrades/upgrade_super_bacteria.tscn" id="11_jbj1t"]
@@ -119,10 +118,6 @@ gamestate = NodePath("../../gameState_Node")
 script = ExtResource("6_jkv2x")
 price = 400
 
-[node name="Transformateur" type="Sprite2D" parent="Windmills" unique_id=240555462]
-position = Vector2(116, 46)
-texture = ExtResource("8_85g3d")
-
 [node name="Eolienne" type="Sprite2D" parent="Windmills" unique_id=1359826047]
 position = Vector2(72, 32)
 texture = ExtResource("3_jyhfs")
@@ -131,6 +126,57 @@ texture = ExtResource("3_jyhfs")
 position = Vector2(33, 37)
 scale = Vector2(0.7352941, 0.8230769)
 texture = ExtResource("3_jyhfs")
+
+[node name="Transformateur" type="Label" parent="Windmills" unique_id=433090939]
+offset_left = 102.0
+offset_top = 44.0
+offset_right = 137.0
+offset_bottom = 63.0
+text = "==============================
+======-=---------------------=
+==============================
+  :===--=-----------------=-
+  :===-=---=----: --------=-
+  :===-==------  ---------=-
+  :===--=----    ---------=-
+  :====-=--=    ----------=-
+  :===-=--          ------=-
+  :===-==-----    --------=-
+  :===--=-----   ---------=-
+  :====-=--=-  -----------=-
+  :===-=----- ------------=-
+  :===-==-----------------=-
+==============================
+======--=--------------------=
+=============================="
+label_settings = ExtResource("4_jbj1t")
+metadata/transparent_char = "$"
+
+[node name="TransformateurB" type="Label" parent="Windmills" unique_id=1438321234]
+visible = false
+offset_left = 102.0
+offset_top = 30.0
+offset_right = 137.0
+offset_bottom = 49.0
+text = "==============================
+======-=---------------------=
+==============================
+  :===--=-----------------=-
+  :===-=---=----: --------=-
+  :===-==------  ---------=-
+  :===--=----    ---------=-
+  :====-=--=    ----------=-
+  :===-=--          ------=-
+  :===-==-----    --------=-
+  :===--=-----   ---------=-
+  :====-=--=-  -----------=-
+  :===-=----- ------------=-
+  :===-==-----------------=-
+==============================
+======--=--------------------=
+=============================="
+label_settings = ExtResource("4_jbj1t")
+metadata/transparent_char = "$"
 
 [node name="bacteria_factory" parent="." unique_id=1136961121 instance=ExtResource("4_jyhfs")]
 position = Vector2(240, 0)
