@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3.4758239"
+   height="70.167992"
+   viewBox="0 0 3.4758239 70.167993"
+   version="1.1"
+   id="svg3260"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="eolienneFoot.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3262"
+     pagecolor="#161616"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="11.313709"
+     inkscape:cx="-17.766058"
+     inkscape:cy="35.57631"
+     inkscape:window-width="1887"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs3257" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect3704"
+       style="fill:none;stroke:#ffffff;stroke-width:0.929206"
+       d="M 0.47521007,33.930005 H 3.0061951 v 35.704866 l -2.53098503,-0.0076 z"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#fefefe;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       d="M 1.4041841,34.255097 V 69.366681"
+       id="path3875"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#fefefe;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       d="M 2.1874151,34.228572 V 69.340156"
+       id="path3875-6"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

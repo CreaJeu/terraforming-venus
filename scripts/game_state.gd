@@ -10,6 +10,7 @@ extends Node
 @export var camera: OurCamera
 @export var ui_bar: UIBar
 @export var day_duration: float = 1
+@export var windmill_rot_speed : float = -.9
 
 var time_passed: float
 var current_day: int = 1

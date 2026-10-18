@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="6.892673"
+   height="52.873158"
+   viewBox="0 0 6.8926731 52.873158"
+   version="1.1"
+   id="svg3260"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="eolienneWing.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3262"
+     pagecolor="#161616"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="16"
+     inkscape:cx="2.0625"
+     inkscape:cy="12.90625"
+     inkscape:window-width="1887"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs3257" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#fffefe;stroke-width:0.852919;stroke-dasharray:none;stroke-opacity:1"
+       d="M 5.0883592,24.16803 3.4469287,0.028932 1.8054982,24.235314 Z"
+       id="path3768"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;stroke:#fffefe;stroke-width:1.1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="M 2.9484695,23.917788 3.885961,10.531984"
+       id="path6118" />
+    <path
+       style="fill:none;stroke:#fffefe;stroke-width:1.1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="M 2.4589699,23.93521 3.7357375,7.2783966"
+       id="path6120"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#fffefe;stroke-width:1.1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="M 3.781333,24.012686 4.3567258,16.32735"
+       id="path6122"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#fffefe;stroke-width:1.1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m 4.4384368,23.941387 0.2438825,-2.84674"
+       id="path6124" />
+  </g>
+</svg>

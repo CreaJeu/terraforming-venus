@@ -41,6 +41,7 @@ static void register_all_scripts()
 	register_UpgradeApplyerFactory();
 	register_VictoryScreenFactory();
 	register_LandscapeFactory();
+	register_WindmillWingFactory();
 	//...
 }
 

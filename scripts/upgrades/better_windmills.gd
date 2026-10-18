@@ -16,6 +16,7 @@ func _exit_tree() -> void:
 	if(gamestate == null):
 		return
 	extra_factory_art.show()
+	gamestate.windmill_rot_speed = -1.7
 	gamestate.set_energy_income(gamestate.energy_income * 2)
 	gamestate.display_message("The windmills now have a motor making them spin extra fast to produce more energy")
 

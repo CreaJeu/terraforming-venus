@@ -70,6 +70,7 @@ static void exit_tree(Script* this_Script)
 	BetterWindmills* this_BetterWindmills = (BetterWindmills*)(this_Script->_sub_class);
 	GameState* gs = this_BetterWindmills->gamestate;
 	iCluige.iNode2D.show(this_BetterWindmills->extra_factory_art);
+	gs->windmill_rot_speed = -1.7;
     set_energy_income(gs, (int)(gs->energy_income * this_BetterWindmills->energy_multiplier));
     set_message(gs->ui_bar, "The windmills now have a motor making them spin extra fast to produce more energy");
 }

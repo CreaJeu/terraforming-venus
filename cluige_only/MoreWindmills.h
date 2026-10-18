@@ -15,6 +15,9 @@ struct _MoreWindmills
 	int additional_energy;
 	bool selected;
 	GameState* gamestate;
+	char* extra_windmill_art_path;
+
+	Node2D* extra_windmill_art;
 
 	//virtual methods - private copy of mother class pointers
 	void (*_delete_super)(Script*);

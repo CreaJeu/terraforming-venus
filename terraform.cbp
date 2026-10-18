@@ -157,6 +157,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="cluige_only/VictoryScreen.h" />
+		<Unit filename="cluige_only/WindmillWing.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cluige_only/WindmillWing.h" />
 		<Unit filename="cluige_only/blink_label.c">
 			<Option compilerVar="CC" />
 		</Unit>

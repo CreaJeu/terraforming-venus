@@ -23,6 +23,7 @@ struct _GameState
 	OurCamera* camera;
 	BarreUI* ui_bar;
 	float day_duration;
+	float windmill_rot_speed;
 
 	float time_passed;
 	int current_day;

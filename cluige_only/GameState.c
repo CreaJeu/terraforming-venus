@@ -59,6 +59,11 @@ Script* instantiate_GameState(const SortedDictionary* parsed_params)
 	{
 		new_GameState->day_duration = 1;//default value from .gd
 	}
+	found = utils_float_from_parsed(&(new_GameState->windmill_rot_speed), parsed_params, "windmill_rot_speed");
+	if(!found)
+	{
+		new_GameState->windmill_rot_speed = -.9;//default value from .gd
+	}
 	new_GameState->time_passed = 0;
 	new_GameState->current_day = 1;
 

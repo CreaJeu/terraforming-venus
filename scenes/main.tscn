@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cch5qqknwh7gl" path="res://scenes/rain.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://b6thy2gm65e1f" path="res://scripts/game_state.gd" id="2_sugp2"]
-[ext_resource type="Texture2D" uid="uid://dry6i63t1elkt" path="res://assets/eolienne.svg" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://hodjx1ojhhcg" path="res://scenes/barre_ui.tscn" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cwxythcsu30vk" path="res://scenes/upgrades/upgrade_more_windmills.tscn" id="3_tefeu"]
 [ext_resource type="LabelSettings" uid="uid://po5dxq7k46vm" path="res://godot_only/label_settings.tres" id="4_jbj1t"]
@@ -14,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://cyjcgnixmq7si" path="res://scenes/upgrades/upgrade_more_bacteria.tscn" id="9_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://bt75dqc0het1a" path="res://scenes/upgrades/upgrade_better_bacteria.tscn" id="10_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://cagmf1j2ietoh" path="res://scenes/upgrades/upgrade_super_bacteria.tscn" id="11_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://qq1vtc6e6m5" path="res://assets/eolienneFoot.svg" id="11_muem4"]
+[ext_resource type="Texture2D" uid="uid://tq4kkloukq22" path="res://assets/eolienneAxis.svg" id="12_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://bdrnwvgby7575" path="res://assets/eolienneWing.svg" id="13_0ld40"]
+[ext_resource type="Script" uid="uid://clkl31bthohsj" path="res://scripts/windmill_wing.gd" id="14_gqmmt"]
 [ext_resource type="Script" uid="uid://drse83ef45k4k" path="res://scripts/VictoryScreen.gd" id="15_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://be8lu6sse7fpw" path="res://scenes/blink_label.tscn" id="16_muem4"]
 
@@ -92,6 +95,7 @@ upgrades_paths = Array[String](["more_windmills_upgrade", "more_windmills_upgrad
 [node name="more_windmills_upgrade" parent="Windmills" unique_id=2074544727 node_paths=PackedStringArray("gamestate") instance=ExtResource("3_tefeu")]
 position = Vector2(143, 12)
 gamestate = NodePath("../../gameState_Node")
+extra_windmill_art_path = "../EolienneV2_2"
 
 [node name="applyer_Node" type="Node" parent="Windmills/more_windmills_upgrade" unique_id=1547696841]
 script = ExtResource("6_jkv2x")
@@ -99,6 +103,7 @@ script = ExtResource("6_jkv2x")
 [node name="more_windmills_upgrade2" parent="Windmills" unique_id=143629266 node_paths=PackedStringArray("gamestate") instance=ExtResource("3_tefeu")]
 position = Vector2(143, 24)
 gamestate = NodePath("../../gameState_Node")
+extra_windmill_art_path = "../EolienneV2_3"
 
 [node name="applyer_Node" type="Node" parent="Windmills/more_windmills_upgrade2" unique_id=657588283]
 script = ExtResource("6_jkv2x")
@@ -106,6 +111,7 @@ script = ExtResource("6_jkv2x")
 [node name="more_windmills_upgrade3" parent="Windmills" unique_id=1436794835 node_paths=PackedStringArray("gamestate") instance=ExtResource("3_tefeu")]
 position = Vector2(142, 37)
 gamestate = NodePath("../../gameState_Node")
+extra_windmill_art_path = "../EolienneV2_4"
 
 [node name="applyer_Node" type="Node" parent="Windmills/more_windmills_upgrade3" unique_id=198349076]
 script = ExtResource("6_jkv2x")
@@ -117,15 +123,6 @@ gamestate = NodePath("../../gameState_Node")
 [node name="applyer_Node" type="Node" parent="Windmills/better_windmills_upgrade" unique_id=415425593]
 script = ExtResource("6_jkv2x")
 price = 400
-
-[node name="Eolienne" type="Sprite2D" parent="Windmills" unique_id=1359826047]
-position = Vector2(72, 32)
-texture = ExtResource("3_jyhfs")
-
-[node name="Eolienne2" type="Sprite2D" parent="Windmills" unique_id=814259118]
-position = Vector2(33, 37)
-scale = Vector2(0.7352941, 0.8230769)
-texture = ExtResource("3_jyhfs")
 
 [node name="Transformateur" type="Label" parent="Windmills" unique_id=433090939]
 offset_left = 102.0
@@ -177,6 +174,126 @@ text = "==============================
 =============================="
 label_settings = ExtResource("4_jbj1t")
 metadata/transparent_char = "$"
+
+[node name="EolienneV2_4" type="Node2D" parent="Windmills" unique_id=1822191037]
+visible = false
+position = Vector2(23, 40)
+
+[node name="Foot" type="Sprite2D" parent="Windmills/EolienneV2_4" unique_id=755448071]
+position = Vector2(-3.833727, 0.32499886)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("11_muem4")
+
+[node name="Axis" type="Sprite2D" parent="Windmills/EolienneV2_4" unique_id=112448626]
+position = Vector2(-3.833727, 0.32499886)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("12_dp3eg")
+
+[node name="Wing1" type="Sprite2D" parent="Windmills/EolienneV2_4" unique_id=971932096]
+position = Vector2(-3.833727, 0.32499886)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("13_0ld40")
+script = ExtResource("14_gqmmt")
+
+[node name="Wing2" type="Sprite2D" parent="Windmills/EolienneV2_4" unique_id=197630472]
+position = Vector2(-3.833727, 0.32499897)
+rotation = 2.0943952
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("13_0ld40")
+script = ExtResource("14_gqmmt")
+
+[node name="Wing3" type="Sprite2D" parent="Windmills/EolienneV2_4" unique_id=1873029169]
+position = Vector2(-3.833727, 0.32499874)
+rotation = 4.1887903
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("13_0ld40")
+script = ExtResource("14_gqmmt")
+
+[node name="EolienneV2_3" type="Node2D" parent="Windmills" unique_id=1514352906]
+visible = false
+position = Vector2(36, 37)
+
+[node name="Foot" type="Sprite2D" parent="Windmills/EolienneV2_3" unique_id=1116023554]
+position = Vector2(-3.833727, 0.32499886)
+scale = Vector2(0.665, 0.665)
+texture = ExtResource("11_muem4")
+
+[node name="Axis" type="Sprite2D" parent="Windmills/EolienneV2_3" unique_id=1969379832]
+position = Vector2(-3.833727, 0.32499886)
+scale = Vector2(0.665, 0.665)
+texture = ExtResource("12_dp3eg")
+
+[node name="Wing1" type="Sprite2D" parent="Windmills/EolienneV2_3" unique_id=505921982]
+position = Vector2(-3.833727, 0.32499886)
+scale = Vector2(0.665, 0.665)
+texture = ExtResource("13_0ld40")
+script = ExtResource("14_gqmmt")
+
+[node name="Wing2" type="Sprite2D" parent="Windmills/EolienneV2_3" unique_id=1289017056]
+position = Vector2(-3.833727, 0.32499897)
+rotation = 2.0943952
+scale = Vector2(0.665, 0.665)
+texture = ExtResource("13_0ld40")
+script = ExtResource("14_gqmmt")
+
+[node name="Wing3" type="Sprite2D" parent="Windmills/EolienneV2_3" unique_id=1304890596]
+position = Vector2(-3.833727, 0.32499874)
+rotation = 4.1887903
+scale = Vector2(0.665, 0.665)
+texture = ExtResource("13_0ld40")
+script = ExtResource("14_gqmmt")
+
+[node name="EolienneV2_2" type="Node2D" parent="Windmills" unique_id=1047826424]
+visible = false
+position = Vector2(49, 36)
+
+[node name="Foot" type="Sprite2D" parent="Windmills/EolienneV2_2" unique_id=1335798744]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("11_muem4")
+
+[node name="Axis" type="Sprite2D" parent="Windmills/EolienneV2_2" unique_id=1217060541]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_dp3eg")
+
+[node name="Wing1" type="Sprite2D" parent="Windmills/EolienneV2_2" unique_id=1657453393]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_0ld40")
+script = ExtResource("14_gqmmt")
+
+[node name="Wing2" type="Sprite2D" parent="Windmills/EolienneV2_2" unique_id=785637181]
+rotation = 2.0943952
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_0ld40")
+script = ExtResource("14_gqmmt")
+
+[node name="Wing3" type="Sprite2D" parent="Windmills/EolienneV2_2" unique_id=126183052]
+rotation = 4.1887903
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_0ld40")
+script = ExtResource("14_gqmmt")
+
+[node name="EolienneV2_1" type="Node2D" parent="Windmills" unique_id=872016839]
+position = Vector2(73, 32)
+
+[node name="Foot" type="Sprite2D" parent="Windmills/EolienneV2_1" unique_id=1712866499]
+texture = ExtResource("11_muem4")
+
+[node name="Axis" type="Sprite2D" parent="Windmills/EolienneV2_1" unique_id=1977675875]
+texture = ExtResource("12_dp3eg")
+
+[node name="Wing1" type="Sprite2D" parent="Windmills/EolienneV2_1" unique_id=128863394]
+texture = ExtResource("13_0ld40")
+script = ExtResource("14_gqmmt")
+
+[node name="Wing2" type="Sprite2D" parent="Windmills/EolienneV2_1" unique_id=826087801]
+rotation = 2.0943952
+texture = ExtResource("13_0ld40")
+script = ExtResource("14_gqmmt")
+
+[node name="Wing3" type="Sprite2D" parent="Windmills/EolienneV2_1" unique_id=226055158]
+rotation = 4.1887903
+texture = ExtResource("13_0ld40")
+script = ExtResource("14_gqmmt")
 
 [node name="bacteria_factory" parent="." unique_id=1136961121 instance=ExtResource("4_jyhfs")]
 position = Vector2(240, 0)

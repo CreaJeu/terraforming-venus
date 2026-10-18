@@ -19,6 +19,9 @@ Script* instantiate_MoreWindmills(const SortedDictionary* parsed_params)
 	{
 		new_MoreWindmills->additional_energy = 10;//default value from .gd
 	}
+	found = utils_str_from_parsed(&(new_MoreWindmills->extra_windmill_art_path),
+				parsed_params, "extra_windmill_art_path");
+	CLUIGE_ASSERT(found, "instantiate_MoreWindmills(): missing 'extra_windmill_art_path' field");
 
 //	found = utils_bool_from_parsed(&(new_MoreWindmills->selected), parsed_params, "selected");
 //	if(!found)
@@ -60,6 +63,8 @@ void ready_MoreWindmills(Script* this_Script)
 	Node* root = iCluige.public_root;
 	Node* gamestate_Node = iCluige.iNode.get_node(root, "main_Node/gameState_Node", true);
 	this_MoreWindmills->gamestate = (GameState*)gamestate_Node->script->_sub_class;
+	Node* bac_art_Node = iCluige.iNode.get_node(this_Script->node, this_MoreWindmills->extra_windmill_art_path, true);
+	this_MoreWindmills->extra_windmill_art = iCluige.iNode2D.cast_from_Node(bac_art_Node);
 }
 
 //bool apply_MoreWindmills(MoreWindmills* this_MoreWindmills, GameState* gamestate)
@@ -67,6 +72,7 @@ static void exit_tree(Script* this_Script)
 {
 	MoreWindmills* this_MoreWindmills = (MoreWindmills*)(this_Script->_sub_class);
 	GameState* gs = this_MoreWindmills->gamestate;
+	iCluige.iNode2D.show(this_MoreWindmills->extra_windmill_art);
     set_energy_income(gs, gs->energy_income+this_MoreWindmills->additional_energy);
     set_message(gs->ui_bar, "More windmills = More energy. Luckily there is no lack of wind on Venus.");
 }
