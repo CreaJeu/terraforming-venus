@@ -177,33 +177,28 @@ metadata/transparent_char = "$"
 
 [node name="EolienneV2_4" type="Node2D" parent="Windmills" unique_id=1822191037]
 visible = false
-position = Vector2(23, 40)
+position = Vector2(14, 29)
 
 [node name="Foot" type="Sprite2D" parent="Windmills/EolienneV2_4" unique_id=755448071]
-position = Vector2(-3.833727, 0.32499886)
 scale = Vector2(0.505, 0.505)
 texture = ExtResource("11_muem4")
 
 [node name="Axis" type="Sprite2D" parent="Windmills/EolienneV2_4" unique_id=112448626]
-position = Vector2(-3.833727, 0.32499886)
 scale = Vector2(0.505, 0.505)
 texture = ExtResource("12_dp3eg")
 
 [node name="Wing1" type="Sprite2D" parent="Windmills/EolienneV2_4" unique_id=971932096]
-position = Vector2(-3.833727, 0.32499886)
 scale = Vector2(0.505, 0.505)
 texture = ExtResource("13_0ld40")
 script = ExtResource("14_gqmmt")
 
 [node name="Wing2" type="Sprite2D" parent="Windmills/EolienneV2_4" unique_id=197630472]
-position = Vector2(-3.833727, 0.32499897)
 rotation = 2.0943952
 scale = Vector2(0.505, 0.505)
 texture = ExtResource("13_0ld40")
 script = ExtResource("14_gqmmt")
 
 [node name="Wing3" type="Sprite2D" parent="Windmills/EolienneV2_4" unique_id=1873029169]
-position = Vector2(-3.833727, 0.32499874)
 rotation = 4.1887903
 scale = Vector2(0.505, 0.505)
 texture = ExtResource("13_0ld40")
@@ -211,33 +206,28 @@ script = ExtResource("14_gqmmt")
 
 [node name="EolienneV2_3" type="Node2D" parent="Windmills" unique_id=1514352906]
 visible = false
-position = Vector2(36, 37)
+position = Vector2(28, 30)
 
 [node name="Foot" type="Sprite2D" parent="Windmills/EolienneV2_3" unique_id=1116023554]
-position = Vector2(-3.833727, 0.32499886)
 scale = Vector2(0.665, 0.665)
 texture = ExtResource("11_muem4")
 
 [node name="Axis" type="Sprite2D" parent="Windmills/EolienneV2_3" unique_id=1969379832]
-position = Vector2(-3.833727, 0.32499886)
 scale = Vector2(0.665, 0.665)
 texture = ExtResource("12_dp3eg")
 
 [node name="Wing1" type="Sprite2D" parent="Windmills/EolienneV2_3" unique_id=505921982]
-position = Vector2(-3.833727, 0.32499886)
 scale = Vector2(0.665, 0.665)
 texture = ExtResource("13_0ld40")
 script = ExtResource("14_gqmmt")
 
 [node name="Wing2" type="Sprite2D" parent="Windmills/EolienneV2_3" unique_id=1289017056]
-position = Vector2(-3.833727, 0.32499897)
 rotation = 2.0943952
 scale = Vector2(0.665, 0.665)
 texture = ExtResource("13_0ld40")
 script = ExtResource("14_gqmmt")
 
 [node name="Wing3" type="Sprite2D" parent="Windmills/EolienneV2_3" unique_id=1304890596]
-position = Vector2(-3.833727, 0.32499874)
 rotation = 4.1887903
 scale = Vector2(0.665, 0.665)
 texture = ExtResource("13_0ld40")
@@ -245,30 +235,30 @@ script = ExtResource("14_gqmmt")
 
 [node name="EolienneV2_2" type="Node2D" parent="Windmills" unique_id=1047826424]
 visible = false
-position = Vector2(49, 36)
+position = Vector2(47, 32)
 
 [node name="Foot" type="Sprite2D" parent="Windmills/EolienneV2_2" unique_id=1335798744]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.845, 0.845)
 texture = ExtResource("11_muem4")
 
 [node name="Axis" type="Sprite2D" parent="Windmills/EolienneV2_2" unique_id=1217060541]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.845, 0.845)
 texture = ExtResource("12_dp3eg")
 
 [node name="Wing1" type="Sprite2D" parent="Windmills/EolienneV2_2" unique_id=1657453393]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.845, 0.845)
 texture = ExtResource("13_0ld40")
 script = ExtResource("14_gqmmt")
 
 [node name="Wing2" type="Sprite2D" parent="Windmills/EolienneV2_2" unique_id=785637181]
 rotation = 2.0943952
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.845, 0.845)
 texture = ExtResource("13_0ld40")
 script = ExtResource("14_gqmmt")
 
 [node name="Wing3" type="Sprite2D" parent="Windmills/EolienneV2_2" unique_id=126183052]
 rotation = 4.1887903
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.845, 0.845)
 texture = ExtResource("13_0ld40")
 script = ExtResource("14_gqmmt")
 

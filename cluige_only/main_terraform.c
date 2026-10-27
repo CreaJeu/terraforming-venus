@@ -21,6 +21,7 @@
 #include "UpgradeApplyer.h"
 #include "VictoryScreen.h"
 #include "Landscape.h"
+#include "WindmillWing.h"
 
 
 static void register_all_scripts()
